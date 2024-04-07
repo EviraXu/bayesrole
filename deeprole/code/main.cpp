@@ -68,7 +68,6 @@ std::string random_string(std::string::size_type length)
     return s;
 }
 
-//打印当前树各个节点数目信息
 void print_lookahead_information(const int depth, const int num_succeeds, const int num_fails, const int propose_count, const std::string& model_search_dir) {
     auto lookahead = create_avalon_lookahead(num_succeeds, num_fails, 0, propose_count, depth, model_search_dir);
     cerr << "                PROPOSE: " << count_lookahead_type(lookahead.get(), PROPOSE) << endl;
@@ -81,7 +80,6 @@ void print_lookahead_information(const int depth, const int num_succeeds, const 
     cerr << "                  Total: " << count_lookahead(lookahead.get()) << endl;
 }
 
-//生成数据点
 void generate_datapoints(
     const int num_datapoints,
     const int depth,
@@ -94,7 +92,6 @@ void generate_datapoints(
     const std::string output_dir,
     const std::string filename_suffix
 ) {
-    //根据参数生成一个基础文件名
     std::string base_filename = (
         "d" + std::to_string(depth) + "_" +
         "s" + std::to_string(num_succeeds) + "_" +
@@ -117,9 +114,7 @@ void generate_datapoints(
     }
     // 更新filepath以包括子目录路径
     const std::string filepath = full_sub_dir_path + "/" + base_filename;
-
     //const std::string filepath = ((output_dir.empty()) ? "" : (output_dir + "/")) + base_filename;
-
 
     cerr << "=========== DEEPROLE DATAPOINT GENERATOR =========" << endl;
     cerr << "           # Datapoints: " << num_datapoints << endl;
@@ -140,7 +135,6 @@ void generate_datapoints(
     cerr << " Writing to: " << filepath << endl;
     cerr << "====================================================" << endl;
 
-    //定义状态间隔（status_interval），用于控制在生成数据点过程中输出状态信息的间隔
     const int status_interval = max(1, min(100, num_datapoints/10));
 
     std::fstream fs;
@@ -160,7 +154,6 @@ void generate_datapoints(
     fs.close();
 }
 
-//测试建树+cfr
 void test(
     const int depth,
     const int num_succeeds,
@@ -186,7 +179,6 @@ void test(
     cout << init.solution_values[0].transpose() << endl;
 }
 
-//测试执行游戏
 void play_mode(
     const int depth,
     const int num_succeeds,
@@ -211,7 +203,6 @@ void play_mode(
     cerr << "------------------ Loaded Models -------------------" << endl;
     print_loaded_models(model_search_dir);
 
-    //建树
     auto lookahead = create_avalon_lookahead(
         num_succeeds,
         num_fails,
@@ -227,12 +218,9 @@ void play_mode(
     ViewpointVector _dummy_values[NUM_PLAYERS];
     cfr_get_values(lookahead.get(), iterations, wait_iterations, starting_probs, true, _dummy_values);
     calculate_cumulative_strategy(lookahead.get());
-    //json_serialize_lookahead(lookahead.get(), starting_probs, std::cout);
-    json_serialize_lookahead_file(lookahead.get(), starting_probs, "output.json");
-    cerr << "Success";
+    json_serialize_lookahead(lookahead.get(), starting_probs, std::cout);
 }
 
-//神经网络测试
 void nn_test_mode(
     const int num_succeeds,
     const int num_fails,
@@ -257,9 +245,8 @@ void nn_test_mode(
     std::cout << std::setprecision(17) << std::setw(2) << json << std::endl;
 }
 
-//main函数
 int main(int argc, char* argv[]) {
-    argc -= (argc > 0); argv += (argc > 0); // 跳过程序名称（argv[0]），以便后续处理其他参数
+    argc -= (argc > 0); argv += (argc > 0); // skip program name argv[0] if present
     
     option::Stats stats(usage, argc, argv);
     std::vector<option::Option> options(stats.options_max);
@@ -273,13 +260,10 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    //如果相应的命令行参数存在，则将其值赋给对应的变量或字符串；否则，使用默认值进行赋值。
     std::string s_num_datapoints;
     std::string s_num_iterations;
     std::string s_num_wait_iters;
     std::string model_search_dir = "models";
-    //std::string model_search_dir = "deeprole/deeprole_zeroing_winprobs";
-    //std::string model_search_dir = "nn_train/exported_models";
     std::string out_dir = "deeprole_output";
     std::string file_suffix;
     std::string s_num_succeeds;
@@ -308,7 +292,6 @@ int main(int argc, char* argv[]) {
     int depth = (s_depth.empty()) ? 1 : std::stoi(s_depth);
     int proposer = (s_proposer.empty()) ? -1 : std::stoi(s_proposer);
 
-    //如果存在TEST_MODE命令行参数，则执行test函数
     if (options[TEST_MODE]) {
         if (proposer < 0 || proposer >= NUM_PLAYERS) {
             proposer = 0;
@@ -326,7 +309,6 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    //如果存在PLAY_MODE或NN_TEST命令行参数,分别执行play_mode或nn_test_mode函数
     if (options[PLAY_MODE] || options[NN_TEST]) {
         if (proposer < 0 || proposer >= NUM_PLAYERS) {
             std::cerr << "You must pass a valid proposer" << std::endl;
