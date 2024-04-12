@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
+#from tensorflow.contrib.layers.python.layers import multihead_attention
+from tensorflow.keras.layers import MultiHeadAttention, Dense, LayerNormalization, Embedding, Input
 import numpy as np
 import random
 import sys
@@ -42,25 +44,25 @@ class CFVFromWinProbsLayer(tf.keras.layers.Layer):
 
     def call(self, inps):
         inp_probs = inps[0][:, 5:]
-        print("INP_PROBS", inp_probs.shape)
+        #print("INP_PROBS", inp_probs.shape)
         win_probs = inps[1]
-        print("WIN_PROBS", win_probs.shape)
+        #print("WIN_PROBS", win_probs.shape)
         factual_values = []
         for player in range(5):
-            print("==== player", player, "====")
+            #print("==== player", player, "====")
             good_win_payoff_for_player = tf.constant(get_payoff_vector(player), dtype=tf.float32)
-            print("good_win_payoff", good_win_payoff_for_player.shape)
+            #print("good_win_payoff", good_win_payoff_for_player.shape)
             player_payoff = 2.0 * good_win_payoff_for_player * win_probs - good_win_payoff_for_player
-            print("player_payoff", player_payoff.shape)
+            #print("player_payoff", player_payoff.shape)
             factual_values_for_belief_and_player = inp_probs * player_payoff
-            print("factual_values", factual_values_for_belief_and_player.shape)
+            #print("factual_values", factual_values_for_belief_and_player.shape)
 
             factual_values_for_player = tf.matmul(factual_values_for_belief_and_player, tf.constant(get_viewpoint_vector(player), dtype=tf.float32))
-            print("factual_values_for_player", factual_values_for_player.shape)
+            #print("factual_values_for_player", factual_values_for_player.shape)
             factual_values.append(factual_values_for_player)
 
         result = tf.concat(factual_values, 1)
-        print("result", result.shape)
+        #print("result", result.shape)
         return result
 
 
@@ -88,31 +90,18 @@ def check_sum(x, y):
 def create_model_transformer():
     # 输入层
     inp = tf.keras.layers.Input(shape=(65,))
+    # Embedding层
+    x = Embedding(input_dim=65, output_dim=128)(inp)
 
-    # 位置编码层
-    position_embedding = tf.keras.layers.Embedding(input_dim=65, output_dim=128)(inp)
+    # 多头自注意力层
+    attention_output = MultiHeadAttention(num_heads=2, key_dim=128)(x, x)
 
-    # 编码器层
-    encoder_output = position_embedding
-    for _ in range(4):
-        encoder_output = tf.keras.layers.MultiHeadAttention(num_heads=8, key_dim=128)([encoder_output, encoder_output])
-        encoder_output = tf.keras.layers.Add()([encoder_output, position_embedding])
-        encoder_output = tf.keras.layers.LayerNormalization(epsilon=1e-6)(encoder_output)
-        encoder_output = tf.keras.layers.Dense(units=512, activation="relu")(encoder_output)
-        encoder_output = tf.keras.layers.Dense(units=128)(encoder_output)
-        encoder_output = tf.keras.layers.Add()([encoder_output, position_embedding])
-        encoder_output = tf.keras.layers.LayerNormalization(epsilon=1e-6)(encoder_output)
+    # 层标准化和全连接层
+    x = LayerNormalization(epsilon=1e-6)(attention_output)
+    x = Dense(128, activation='relu')(x)
+    x = Dense(75)(x)
 
-    # 解码器层
-    decoder_output = tf.keras.layers.Dense(units=512, activation="relu")(encoder_output)
-    decoder_output = tf.keras.layers.Dense(units=128)(decoder_output)
-    decoder_output = tf.keras.layers.Add()([decoder_output, encoder_output])
-    decoder_output = tf.keras.layers.LayerNormalization(epsilon=1e-6)(decoder_output)
-
-    # 输出层
-    out = tf.keras.layers.Dense(units=2000, activation="softmax")(decoder_output)
-
-    model = tf.keras.models.Model(inputs=inp, outputs=out)
+    model = tf.keras.models.Model(inputs=inp, outputs=x)
     model.compile(optimizer='adam', loss='mse', metrics=['mse'])
     return model
 
@@ -147,6 +136,8 @@ def train(num_succeeds, num_fails, propose_count, model_type):
         model = create_model_unconstrained()
     elif model_type == 'win_probs':
         model = create_model_v2()
+    elif model_type == 'transformer':
+        model = create_model_transformer()
 
     #加载数据
     print("Loading data...")
@@ -188,23 +179,25 @@ def held_out_loss_data(num_succeeds, num_fails, propose_count):
     X = X[ind]
     Y = Y[ind]
     #划分验证集和训练集
-    # val_X, train_X = X[:20000], X[20000:]
-    # val_Y, train_Y = Y[:20000], Y[20000:]
-    val_X, train_X = X[:2000], X[2000:]
-    val_Y, train_Y = Y[:2000], Y[2000:]
+    val_X, train_X = X[:20000], X[20000:]
+    val_Y, train_Y = Y[:20000], Y[20000:]
+    # val_X, train_X = X[:2000], X[2000:]
+    # val_Y, train_Y = Y[:2000], Y[2000:]
     #进行模型训练和验证的循环
     for model_type in ['unconstrained', 'win_probs']:
-        #for n_datapoints in [20000, 40000, 60000, 80000, 100000]:
-        for n_datapoints in [2000, 4000, 6000, 8000, 10000]:
-            epochs = int(3000 * 10000/n_datapoints)
-            patience = int(100 * 10000/n_datapoints)
-            # epochs = int(3000 * 100000/n_datapoints)
-            # patience = int(100 * 100000/n_datapoints)
+        for n_datapoints in [20000, 40000, 60000, 80000, 100000]:
+        #for n_datapoints in [2000, 4000, 6000, 8000, 10000]:
+            # epochs = int(3000 * 10000/n_datapoints)
+            # patience = int(100 * 10000/n_datapoints)
+            epochs = int(3000 * 100000/n_datapoints)
+            patience = int(100 * 100000/n_datapoints)
             #根据模型类型创建相应的模型对象
             if model_type == 'unconstrained':
                 model = create_model_unconstrained()
             elif model_type == 'win_probs':
                 model = create_model_v2()
+            elif model_type == 'transformer':
+                model = create_model_transformer()
             #设置 Early Stopping 的参数 patience 和 TensorBoard 的回调函数，用于在训练过程中进行早停和记录日志
             early_stopping = tf.keras.callbacks.EarlyStopping(patience=patience)
             tensorboard_callback = tf.keras.callbacks.TensorBoard(

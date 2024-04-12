@@ -85,8 +85,12 @@ def arr_as_arr5(arr):
 
 def get_layer_input_shape_shape5(layer):
     """Convert a keras shape to an fdeep shape"""
-    shape = layer.input_shape[1:]
+    #print("layer.input_shape:",layer.input_shape)
+    #shape = layer.input_shape[1:]
+    shape = layer.input_shape[0][1:]
+    print("shape:",shape)
     depth = len(shape)
+    print("depth:",depth)
     if depth == 1:
         return (1, 1, 1, 1, shape[0])
     if depth == 2:
@@ -169,6 +173,8 @@ def are_embedding_layer_positions_ok_for_testing(model):
 def gen_test_data(model):
     """Generate data for model verification test."""
 
+    #用于确保输入形状的第一个元素不是 None。如果是 None，它将第一个元素设置为 1
+    #这通常用于处理批处理大小为 None 的情况（典型的 Keras 行为）。
     def set_shape_idx_0_to_1_if_none(shape):
         """Change first element in tuple to 1."""
         if shape[0] is not None:
@@ -178,6 +184,7 @@ def gen_test_data(model):
         shape = tuple(shape_lst)
         return shape
 
+    #为每个输入层生成随机数据。根据层的类型（是否为嵌入层），它选择使用不同的随机数据生成方法
     def generate_input_data(input_layer):
         """Random data fitting the input shape of a layer."""
         if input_layer._outbound_nodes and isinstance(
@@ -192,8 +199,24 @@ def gen_test_data(model):
             shape = input_layer.batch_input_shape
         except AttributeError:
             shape = input_layer.input_shape
+
+        print("shape:", shape) 
+
+        # if shape[0][0] is None:
+        #     shape[0] = (32,) + shape[0][1:]  # Replace None batch size with default 32
+        # print("shape[0]:", shape[0]) 
+
+        # corrected_shape = set_shape_idx_0_to_1_if_none(shape[0])
+        # print("Corrected shape:", corrected_shape) 
+
+        # # Check for None or non-integer types in the shape tuple
+        # if any(x is None for x in corrected_shape) or not all(isinstance(x, int) for x in corrected_shape):
+        #     raise ValueError("Shape contains invalid values (None or non-integer): {}".format(corrected_shape))
+
+        # data = random_fn(size=corrected_shape).astype(np.float32)
+        # return data
         return random_fn(
-            size=replace_none_with(32, set_shape_idx_0_to_1_if_none(shape))).astype(np.float32)
+            size=replace_none_with(32, set_shape_idx_0_to_1_if_none(shape[0]))).astype(np.float32)
 
     assert are_embedding_layer_positions_ok_for_testing(
         model), "Test data can only be generated if embedding layers are positioned directly after input nodes."
@@ -750,6 +773,8 @@ def model_to_fdeep_json(model, no_tests=False):
     model.compile(loss='mse', optimizer='sgd')
 
     model = convert_sequential_to_model(model)
+
+    print("no_tests:",no_tests)
 
     test_data = None if no_tests else gen_test_data(model)
 
