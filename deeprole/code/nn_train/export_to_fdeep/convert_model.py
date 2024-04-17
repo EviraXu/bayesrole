@@ -88,9 +88,9 @@ def get_layer_input_shape_shape5(layer):
     #print("layer.input_shape:",layer.input_shape)
     #shape = layer.input_shape[1:]
     shape = layer.input_shape[0][1:]
-    print("shape:",shape)
+    #print("shape:",shape)
     depth = len(shape)
-    print("depth:",depth)
+    #print("depth:",depth)
     if depth == 1:
         return (1, 1, 1, 1, shape[0])
     if depth == 2:
