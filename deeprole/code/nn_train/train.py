@@ -90,16 +90,27 @@ def check_sum(x, y):
 def create_model_transformer():
     # 输入层
     inp = tf.keras.layers.Input(shape=(65,))
+    print(inp.shape)
     # Embedding层
     x = Embedding(input_dim=65, output_dim=128)(inp)
+    print(x.shape)
 
     # 多头自注意力层
     attention_output = MultiHeadAttention(num_heads=2, key_dim=128)(x, x)
 
     # 层标准化和全连接层
     x = LayerNormalization(epsilon=1e-6)(attention_output)
+    print(x.shape)
     x = Dense(128, activation='relu')(x)
+    print(x.shape)
     x = Dense(75)(x)
+    print(x.shape)
+
+    # Flatten层和额外的Dense层
+    x = tf.keras.layers.Flatten()(x)
+    print(x.shape)
+    x = tf.keras.layers.Dense(75)(x)
+    print(x.shape)
 
     model = tf.keras.models.Model(inputs=inp, outputs=x)
     model.compile(optimizer='adam', loss='mse', metrics=['mse'])
@@ -144,10 +155,16 @@ def train(num_succeeds, num_fails, propose_count, model_type):
     _, X, Y = load_data(num_succeeds, num_fails, propose_count)
 
     #设置模型检查点的回调函数，用于保存在验证集上性能最好的模型
-    checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-        'models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
-        save_best_only=True
-    )
+    if model_type == 'win_probs':
+        checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+            'models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
+            save_best_only=True
+        )
+    elif model_type == 'transformer':
+        checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+            'transformer_models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
+            save_best_only=True
+        )
 
     #设置 TensorBoard 的回调函数，用于记录训练过程的日志。
     tensorboard_callback = tf.keras.callbacks.TensorBoard(

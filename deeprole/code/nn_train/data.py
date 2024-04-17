@@ -26,11 +26,21 @@ def load_data(num_succeeds, num_fails, propose_count):
         concatenated = np.concatenate(arrays)
         np.save(cache_filename, concatenated)
 
+    # mata存储原始数据的前 8 列，这些可能用于描述性统计或其他元数据使用。
     meta = concatenated[:, :8]
+
+    # proposer 变量存储原始数据的第 5 列
     proposer = concatenated[:, 4]
+    # proposer被用来生成一个独热编码的特征 onehot。独热编码向量 onehot 的长度是5，表示可能有5个不同的 proposer 值。
     onehot = np.zeros((len(concatenated), 5))
     onehot[np.arange(len(concatenated)), proposer.astype(np.int)] = 1.0
+
+    #X 由onehot独热编码和原始数据的第9列到第68列组成
+    #代表初始belief，共60个数据
     X = np.concatenate([onehot, concatenated[:, 8:68]], axis=1)
+
+    #Y 存储原始数据的第69列及以后的所有列
+    #代表输出的cfr value值
     Y = concatenated[:, 68:]
     return meta, X, Y
 
