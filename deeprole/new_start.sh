@@ -31,8 +31,7 @@ function train_section() {
     echo "$(date) ==== Git push done with Succeeds=$NUM_SUCCEEDS, Fails=$NUM_FAILS, Propose=$PROPOSE_COUNT" >> "$LOG_FILE"
 }
 
-ITEMS="2 1
-1 2
+ITEMS="1 2
 2 0
 1 1
 0 2
