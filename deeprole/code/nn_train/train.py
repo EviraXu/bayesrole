@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
-#from tensorflow.contrib.layers.python.layers import multihead_attention
-from tensorflow.keras.layers import MultiHeadAttention, Dense, LayerNormalization, Embedding, Input
+from tensorflow.keras.layers import Input, Embedding, Dense, LayerNormalization, Dropout, Flatten
+from tensorflow.keras.layers import MultiHeadAttention
+from tensorflow.keras.models import Model
 import numpy as np
 import random
 import sys
@@ -65,12 +66,8 @@ class CFVFromWinProbsLayer(tf.keras.layers.Layer):
         #print("result", result.shape)
         return result
 
-
-
-
 def loss(y_true, y_pred):
     return tf.losses.mean_squared_error(y_true, y_pred) # + tf.losses.huber_loss(y_true, y_pred) #+ tf.losses.mean_pairwise_squared_error(y_true, y_pred)
-
 
 def create_model_v1():
     inp = tf.keras.layers.Input(shape=(65,))
@@ -86,34 +83,69 @@ def create_model_v1():
 def check_sum(x, y):
     return np.sum(y)
 
+def positional_encoding(position, d_model):
+    def get_angles(pos, i, d_model):
+        angle_rates = 1 / tf.pow(10000.0, (2 * (i // 2)) / tf.cast(d_model, tf.float32))
+        return pos * angle_rates
+
+    angle_rads = get_angles(tf.range(position)[:, tf.newaxis],
+                            tf.range(d_model)[tf.newaxis, :],
+                            d_model)
+
+    sines = tf.math.sin(angle_rads[:, 0::2])
+    cosines = tf.math.cos(angle_rads[:, 1::2])
+
+    pos_encoding = tf.concat([sines, cosines], axis=-1)
+    pos_encoding = pos_encoding[tf.newaxis, ...]
+
+    return tf.cast(pos_encoding, tf.float32)
+
 #创建transformer模型下的神经网络
-def create_model_transformer():
-    # 输入层
-    inp = tf.keras.layers.Input(shape=(65,))
-    print(inp.shape)
-    # Embedding层
-    x = Embedding(input_dim=65, output_dim=128)(inp)
-    print(x.shape)
+def create_model_transformer(sequence_length=65, d_model=128, num_heads=4, ff_dim=256, num_layers=3, dropout_rate=0.1):
+    
+    inp = Input(shape=(sequence_length,))
+    print("Input shape:",inp.shape)
+    
+    # Embedding layer
+    x = Embedding(input_dim=10000, output_dim=d_model)(inp)
+    print("Embedding shape:",x.shape)
+    
+    # Add positional encoding
+    pos_enc = positional_encoding(sequence_length, d_model)
+    x += pos_enc
+    print("positional shape:",x.shape)
+    
+    # Transformer blocks
+    for _ in range(num_layers):
+        attention_out = MultiHeadAttention(num_heads=num_heads, key_dim=d_model)(x, x)
+        print("MultiHeadAttention shape:",attention_out.shape)
+        x = LayerNormalization(epsilon=1e-6)(attention_out + x)
+        print("LayerNormalization shape:",x.shape)
+        x = Dropout(dropout_rate)(x)
+        print("Dropout shape:",x.shape)
+        
+        # Feed forward network
+        ff_out = Dense(ff_dim, activation='relu')(x)
+        print("ff_out1 shape:",ff_out.shape)
+        ff_out = Dense(d_model)(ff_out)
+        print("ff_out2 shape:",ff_out.shape)
+        x = LayerNormalization(epsilon=1e-6)(ff_out + x)
+        print("LayerNormalization shape:",x.shape)
+        x = Dropout(dropout_rate)(x)
+        print("Dropout shape:",x.shape)
 
-    # 多头自注意力层
-    attention_output = MultiHeadAttention(num_heads=2, key_dim=128)(x, x)
-
-    # 层标准化和全连接层
-    x = LayerNormalization(epsilon=1e-6)(attention_output)
-    print(x.shape)
-    x = Dense(128, activation='relu')(x)
-    print(x.shape)
-    x = Dense(75)(x)
-    print(x.shape)
-
-    # Flatten层和额外的Dense层
-    x = tf.keras.layers.Flatten()(x)
-    print(x.shape)
-    x = tf.keras.layers.Dense(75)(x)
-    print(x.shape)
-
-    model = tf.keras.models.Model(inputs=inp, outputs=x)
+    # Flatten and final Dense layers
+    x = Flatten()(x)
+    print("Flatten shape:",x.shape)
+    x = Dense(75, activation='relu')(x)
+    print("Dense shape:",x.shape)
+    x = Dense(1)(x)  # Change this according to your output requirements
+    print("Dense shape2:",x.shape)
+    
+    # Create and compile the model
+    model = Model(inputs=inp, outputs=x)
     model.compile(optimizer='adam', loss='mse', metrics=['mse'])
+    
     return model
 
 def create_model_v2():
