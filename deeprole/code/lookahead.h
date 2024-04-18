@@ -28,7 +28,7 @@ struct LookaheadNode {
     int num_succeeds;//胜利轮数
     int num_fails;//失败轮数
     int proposer;//提议者
-    int propose_count;//总提议数量？
+    int propose_count;//当前提议数量
     uint32_t proposal;//提议的执行任务玩家（00110）
     int merlin_pick;//梅林是谁
 
