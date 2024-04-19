@@ -38,3 +38,6 @@ Fri Apr 19 18:38:38 CST 2024 ==== Done with Succeeds=1, Fails=2, Propose=2
 Fri Apr 19 19:25:52 CST 2024 ==== Git push done with Succeeds=1, Fails=2, Propose=2
 Fri Apr 19 19:25:52 CST 2024 ======== Starting training process for: Succeeds=1, Fails=2, Propose=1
 Fri Apr 19 19:25:52 CST 2024 ==== Generating datapoints...
+Sat Apr 20 04:24:07 CST 2024 (1, 2, 1) Datapoints: 20000
+Sat Apr 20 04:24:07 CST 2024 ==== Training neural network... (Takes 30-45 minutes)
+Sat Apr 20 04:28:52 CST 2024 ==== Done with Succeeds=1, Fails=2, Propose=1
