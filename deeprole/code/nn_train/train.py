@@ -139,8 +139,8 @@ def create_model_transformer(sequence_length=65, d_model=128, num_heads=4, ff_di
     print("Flatten shape:",x.shape)
     x = Dense(75, activation='relu')(x)
     print("Dense shape:",x.shape)
-    x = Dense(1)(x)  # Change this according to your output requirements
-    print("Dense shape2:",x.shape)
+    #x = Dense(1)(x)  # Change this according to your output requirements
+    #print("Dense shape2:",x.shape)
     
     # Create and compile the model
     model = Model(inputs=inp, outputs=x)
