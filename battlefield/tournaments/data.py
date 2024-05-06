@@ -1,15 +1,15 @@
 import pandas as pd
 
 # 加载CSV文件
-df = pd.read_csv('battlefield/tournaments/Deeprole_RandomBot/Deeprole-Deeprole-Deeprole-Deeprole-RandomBot_635a394289c5e4283456.csv')
+df = pd.read_csv('/root/DeepRole-master/battlefield/tournaments/DeepBayes_Deeprole/Deeprole-Deeprole-Deeprole-Deeprole-Deeprole_a17f6f0a9079806e39b9.csv')
 
 # 确定正方和反方角色
 positive_roles = ['servant', 'merlin']
 negative_roles = ['minion', 'assassin']
 
 # 筛选bot_4为Deeprole/RandomBot的行
-#df_bot4_deeprole = df[df['bot_4'] == 'Deeprole']
-df_bot4_deeprole = df[df['bot_4'] == 'RandomBot']
+df_bot4_deeprole = df[df['bot_4'] == 'Deeprole']
+#df_bot4_deeprole = df[df['bot_4'] == 'DeepBayes']
 
 
 # 计算处于正方角色下的胜率

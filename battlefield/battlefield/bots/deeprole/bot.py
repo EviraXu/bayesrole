@@ -224,3 +224,8 @@ class Deeprole_ZeroingUnconstrained(Deeprole):
 class Deeprole_ZeroingWinProbs(Deeprole):
     DEEPROLE_BINARY = 'deeprole_zeroing'
     NN_FOLDER = 'deeprole_zeroing_winprobs'
+
+class DeepBayes(Deeprole):
+    DEEPROLE_BINARY = 'deepbayes'
+    NN_FOLDER = 'deepbayes_models'
+

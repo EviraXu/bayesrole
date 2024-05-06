@@ -1,0 +1,9 @@
+Mon May  6 18:23:55 CST 2024 ======== Starting training process for: Succeeds=2, Fails=2, Propose=4
+Mon May  6 18:23:55 CST 2024 ==== Generating datapoints...
+Mon May  6 18:23:55 CST 2024 (2, 2, 4) Datapoints: 0
+Mon May  6 18:23:55 CST 2024 ==== Training neural network... (Takes 30-45 minutes)
+Mon May  6 18:24:04 CST 2024 ==== Done with Succeeds=2, Fails=2, Propose=4
+Mon May  6 18:38:26 CST 2024 ======== Starting training process for: Succeeds=2, Fails=2, Propose=4
+Mon May  6 18:38:26 CST 2024 ==== Generating datapoints...
+Mon May  6 18:43:53 CST 2024 ======== Starting training process for: Succeeds=2, Fails=2, Propose=4
+Mon May  6 18:43:53 CST 2024 ==== Generating datapoints...

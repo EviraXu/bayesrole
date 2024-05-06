@@ -1,4 +1,5 @@
 from battlefield.bots.deeprole.bot import (
+    DeepBayes,
     Deeprole,
     Deeprole_3_1,
     Deeprole_10_5,

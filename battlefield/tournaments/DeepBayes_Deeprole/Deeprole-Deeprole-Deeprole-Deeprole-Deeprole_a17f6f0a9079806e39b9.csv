@@ -1,0 +1,601 @@
+bot_0,bot_0_payoff,bot_0_role,bot_1,bot_1_payoff,bot_1_role,bot_2,bot_2_payoff,bot_2_role,bot_3,bot_3_payoff,bot_3_role,bot_4,bot_4_payoff,bot_4_role,win_type,winner
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many proposals and no resolution,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many proposals and no resolution,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many proposals and no resolution,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many proposals and no resolution,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many proposals and no resolution,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many proposals and no resolution,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,minion,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,minion,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,minion,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many proposals and no resolution,evil
+Deeprole,-1.5,assassin,Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,assassin,Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many proposals and no resolution,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many proposals and no resolution,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,-1.5,assassin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,1.5,assassin,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,merlin,Deeprole,1.0,servant,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,assassin picked,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many proposals and no resolution,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Deeprole,-1.0,servant,Too many bad fails,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,merlin,Deeprole,1.0,servant,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
+Deeprole,-1.5,minion,Deeprole,-1.5,assassin,Deeprole,1.0,servant,Deeprole,1.0,servant,Deeprole,1.0,merlin,assassin failed,good
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,Too many bad fails,evil
+Deeprole,1.5,minion,Deeprole,1.5,assassin,Deeprole,-1.0,servant,Deeprole,-1.0,servant,Deeprole,-1.0,merlin,assassin picked,evil
