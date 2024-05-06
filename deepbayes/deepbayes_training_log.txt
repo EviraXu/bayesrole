@@ -7,3 +7,6 @@ Mon May  6 18:38:26 CST 2024 ======== Starting training process for: Succeeds=2,
 Mon May  6 18:38:26 CST 2024 ==== Generating datapoints...
 Mon May  6 18:43:53 CST 2024 ======== Starting training process for: Succeeds=2, Fails=2, Propose=4
 Mon May  6 18:43:53 CST 2024 ==== Generating datapoints...
+Tue May  7 00:39:09 CST 2024 (2, 2, 4) Datapoints: 20000
+Tue May  7 00:39:09 CST 2024 ==== Training neural network... (Takes 30-45 minutes)
+Tue May  7 00:44:39 CST 2024 ==== Done with Succeeds=2, Fails=2, Propose=4
