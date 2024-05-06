@@ -1,5 +1,5 @@
-#ifndef CFR_PLUS_H_
-#define CFR_PLUS_H_
+#ifndef CFR_BAYES_H_
+#define CFR_BAYES_H_
 
 #include "./lookahead.h"
 
@@ -17,4 +17,4 @@ void cfr_get_values(
     ViewpointVector* values
 );
 
-#endif // CFR_PLUS_H_
+#endif // CFR_BAYES_H_

@@ -6,7 +6,6 @@
 #include <cmath>
 #include <array>
 #include <utility>
-#include <fstream> 
 
 #include "cfr_plus.h"
 #include "lookup_tables.h"
@@ -117,7 +116,7 @@ static void fill_reach_probabilities_for_mission_node(LookaheadNode* node) {
             for (int player = 0; player < NUM_PLAYERS; player++) {
                 // Skip players not on the mission.
                 if (((1 << player) & node->proposal) == 0) continue;
-                //因为没人选择失败，所以乘以所有人都选择成功的策略（也就是第二个参数为0）
+                //因为没人选择失败，所以假设所有人都是好人？
                 for (int viewpoint = NUM_GOOD_VIEWPOINTS; viewpoint < NUM_VIEWPOINTS; viewpoint++) {
                     child->reach_probs[player](viewpoint) *= node->mission_strategy->at(player)(viewpoint, 0);
                 }
@@ -159,7 +158,7 @@ static void fill_reach_probabilities_for_mission_node(LookaheadNode* node) {
     }
 }
 
-//填充其他节点的到达概率（PROPOSE、VOTE、MISSION）
+//填充节点的到达概率
 static void fill_reach_probabilities(LookaheadNode* node) {
     switch (node->type) {
     case PROPOSE: {
@@ -170,7 +169,6 @@ static void fill_reach_probabilities(LookaheadNode* node) {
                 child->reach_probs[i] = node->reach_probs[i];
             }
             //propose_strategy->col(proposal)获取propose_strategy指针指向的二维数组的第proposal列向量
-            //改
             child->reach_probs[player] *= node->propose_strategy->col(proposal);
         }
     } break;
@@ -181,7 +179,6 @@ static void fill_reach_probabilities(LookaheadNode* node) {
                 //vote 将被赋值为 0 或 1，代表投票结果的二进制位值
                 int vote = (vote_pattern >> player) & 1;
                 //函数将每个玩家的到达概率乘以节点的投票策略中对应玩家的列向量（0表示反对，1表示赞成）
-                //改
                 child->reach_probs[player] = node->reach_probs[player] * node->vote_strategy->at(player).col(vote);
             }
         }
@@ -194,9 +191,6 @@ static void fill_reach_probabilities(LookaheadNode* node) {
 }
 
 //计算每个分配情况的完整到达概率
-//TERMINAL_NO_CONSENSUS、TERMINAL_TOO_MANY_FAILS、TERMINAL_PROPOSE_NN
-//不可能的情况置为0
-//可能的话，概率等于所有玩家在各自信息集下到达当前节点的概率乘积
 static void populate_full_reach_probs(LookaheadNode* node) {
     for (int i = 0; i < NUM_ASSIGNMENTS; i++) {
         double probability = 1.0;
@@ -234,32 +228,8 @@ void calculate_strategy(LookaheadNode* node, const double cum_strat_weight) {
         player_strategy = player_regrets.max(0.0);
         #endif
         
-        //改-更新策略
-        int proposer = node->proposer;
-        double evil_threshold = 0.5;
-        ProposeData tmp_strategy = player_strategy;
-        const int* index_to_proposal = (ROUND_TO_PROPOSE_SIZE[node->round()] == 2) ? INDEX_TO_PROPOSAL_2 : INDEX_TO_PROPOSAL_3;
-        for(int i = 0; i < NUM_VIEWPOINTS; i++){
-            std::vector<int> evil_players;
-            for (int idx = 0; idx < NUM_PLAYERS; ++idx) {
-                if (node->finding_evil->at(proposer)(i,idx) > evil_threshold) {
-                    evil_players.push_back(idx);
-                }
-            }
-            for(int j = 0; j < NUM_PROPOSAL_OPTIONS; j++){
-                int proposal = index_to_proposal[j];
-                for(int m = 0; m < evil_players.size(); m++){
-                    if((1 << evil_players[m]) & proposal){
-                        tmp_strategy(i,j) *= 0.5;
-                    }
-                }
-            }
-        }
-
-
         //将 player_strategy 中的每个元素归一化，使得每列的元素之和等于1。这样可以将策略表示为概率分布
-        ProposeData tmp_holder = tmp_strategy.colwise() / tmp_strategy.rowwise().sum();
-        //ProposeData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
+        ProposeData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
         //处理可能出现的非有限值，确保 tmp_holder 中的每个元素都是有效的概率值（介于0和1之间）。
         //如果某个元素为非有限值，那么它将被替换为一个平均概率值，即 1.0/NUM_PROPOSAL_OPTIONS
         tmp_holder = tmp_holder.unaryExpr([](double v) { return std::isfinite(v) ? v : 1.0/NUM_PROPOSAL_OPTIONS; });
@@ -284,30 +254,7 @@ void calculate_strategy(LookaheadNode* node, const double cum_strat_weight) {
             player_strategy = player_regrets.max(0.0);
             #endif
 
-            //改-更新策略
-            //设置阈值
-            double evil_threshold = 0.5;
-            
-            VoteData tmp_strategy = player_strategy;
-            const int* index_to_proposal = (ROUND_TO_PROPOSE_SIZE[node->round()] == 2) ? INDEX_TO_PROPOSAL_2 : INDEX_TO_PROPOSAL_3;
-            int proposal = node->proposal;
-            for(int j = 0;j < NUM_VIEWPOINTS; j++){
-                std::vector<int> evil_players;
-                for (int idx = 0; idx < NUM_PLAYERS; ++idx) {
-                    if (node->finding_evil->at(i)(j,idx) > evil_threshold) {
-                        evil_players.push_back(idx);
-                    }
-                }
-                for(int m = 0; m < evil_players.size(); m++){
-                    if((1 << evil_players[m]) & proposal){
-                        tmp_strategy(j,0) *= 0.5;
-                    }
-                }
-            }
-            VoteData tmp_holder = tmp_strategy.colwise() / tmp_strategy.rowwise().sum();
-
-            //VoteData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
-            
+            VoteData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
             //处理可能出现的非有限值，确保 tmp_holder 中的每个元素都是有效的概率值（介于0和1之间）。
             //如果某个元素为非有限值，那么它将被替换为0.5
             tmp_holder = tmp_holder.unaryExpr([](double v) { return std::isfinite(v) ? v : 0.5; });
@@ -355,14 +302,8 @@ void calculate_strategy(LookaheadNode* node, const double cum_strat_weight) {
             // These aren't so we have to max them.
             player_strategy = player_regrets.max(0.0);
             #endif
-            
-            //改-更新策略
-            MerlinData tmp_strategy;
-            MerlinData finding_merlin = node->finding_merlin->at(i);
-            tmp_strategy = 0.5*finding_merlin + 0.5*player_strategy;
-            MerlinData tmp_holder = tmp_strategy.colwise() / tmp_strategy.rowwise().sum();
-            
-            //MerlinData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
+
+            MerlinData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
             tmp_holder = tmp_holder.unaryExpr([](double v) { return std::isfinite(v) ? v : 1.0/NUM_PLAYERS; });
             player_strategy = (1.0 - TREMBLE_VALUE) * tmp_holder + TREMBLE_VALUE * MerlinData::Constant(1.0/NUM_PLAYERS);
 
@@ -411,39 +352,6 @@ static void calculate_propose_cfvs(LookaheadNode* node) {
     #ifdef CFR_PLUS
     *(node->propose_regrets) = node->propose_regrets->max(0.0);
     #endif
-
-    //改-更新finding_evil数组
-    int proposer = node->proposer;
-    for (int player = 0; player < NUM_PLAYERS; player++){
-        for (int viewpoint = 0; viewpoint < NUM_VIEWPOINTS; viewpoint++){
-            double rmax = node->children[0]->counterfactual_values[proposer](viewpoint);
-            for (int proposal = 0; proposal < NUM_PROPOSAL_OPTIONS; proposal++){
-                if(node->children[proposal]->counterfactual_values[proposer](viewpoint) >= rmax){
-                    rmax = node->children[proposal]->counterfactual_values[proposer](viewpoint);
-                }
-            }
-            double sum_dif = 0;
-            for (int proposal = 0; proposal < NUM_PROPOSAL_OPTIONS; proposal++){
-                sum_dif += rmax - node->children[proposal]->counterfactual_values[proposer](viewpoint);
-            }
-            for (int proposal = 0; proposal < NUM_PROPOSAL_OPTIONS; proposal++){
-                double dif = rmax - node->children[proposal]->counterfactual_values[proposer](viewpoint);
-                node ->children[proposal]->finding_evil->at(player)(viewpoint,proposer) = node->finding_evil->at(player)(viewpoint,proposer) * (dif / sum_dif);
-            }
-        }
-    }
-    //改-更新finding_merlin数组
-    // for (int player = 0; player < NUM_PLAYERS; player++){
-    //     for (int viewpoint = 0; viewpoint < NUM_VIEWPOINTS; viewpoint++){
-    //         for (int proposal = 0; proposal < NUM_PROPOSAL_OPTIONS; proposal++){
-    //             if ((1 << player) & proposal){
-    //                 node ->children[proposal]->finding_merlin->at(player)(viewpoint,proposer) = node->finding_merlin->at(player)(viewpoint,proposer) * 0.5;
-    //             }
-                
-    //         }
-    //     }
-    // }
-
 }
 
 //计算vote的cfv
@@ -465,35 +373,11 @@ static void calculate_vote_cfvs(LookaheadNode* node) {
         node->vote_regrets->at(player) = node->vote_regrets->at(player).max(0.0);
         #endif
     }
-
-    //改-更新finding_evil数组
-    //player在viewpoint视角认为player是evil的概率
-    for (int player = 0; player < NUM_PLAYERS; player++){
-        for (int viewpoint = 0; viewpoint < NUM_VIEWPOINTS; viewpoint++){
-            for (int i = 0; i < NUM_PLAYERS; i++){
-                double rmax = 0;
-                for (int vote_pattern = 0; vote_pattern < (1 << NUM_PLAYERS); vote_pattern++){
-                    if(node->children[vote_pattern]->counterfactual_values[i](viewpoint) > rmax){
-                        rmax = node->children[vote_pattern]->counterfactual_values[i](viewpoint);
-                    }
-                }
-                double sum_dif = 0;
-                for (int vote_pattern = 0; vote_pattern < (1 << NUM_PLAYERS); vote_pattern++){
-                    sum_dif += node->children[vote_pattern]->counterfactual_values[i](viewpoint);
-                }
-                for (int vote_pattern = 0; vote_pattern < (1 << NUM_PLAYERS); vote_pattern++){
-                    double dif = rmax - node->children[vote_pattern]->counterfactual_values[i](viewpoint);
-                    node->children[vote_pattern]->finding_evil->at(player)(viewpoint,i) = node->finding_evil->at(player)(viewpoint,i) * (dif / sum_dif);
-                }
-            }
-        }
-    }
-
 }
 
 static void calculate_mission_cfvs(LookaheadNode* node) {
     // For players not on the mission, the CFVs are just the sum.
-    //不执行任务的玩家，CFV就是子节点和
+    //不执行任务的玩家，CFV就是和
     for (int player = 0; player < NUM_PLAYERS; player++) {
         // Skip players on the mission
         if ((1 << player) & node->proposal) continue;
@@ -532,7 +416,6 @@ static void calculate_mission_cfvs(LookaheadNode* node) {
                 pass_cfv = node->children[0]->counterfactual_values[player](viewpoint);
                 fail_cfv = node->children[1]->counterfactual_values[player](viewpoint);
             }
-            //mission更新悔值
             double my_pass_prob = node->mission_strategy->at(player)(viewpoint, 0);
             double result_cfv = pass_cfv * my_pass_prob + fail_cfv * (1.0 - my_pass_prob);
             node->counterfactual_values[player](viewpoint) = result_cfv;
@@ -543,52 +426,20 @@ static void calculate_mission_cfvs(LookaheadNode* node) {
         node->mission_regrets->at(player) = node->mission_regrets->at(player).max(0.0);
         #endif
     }
-
-    //改-更新finding_evil
-    //player在viewpoint下认为参与mission的玩家是evil的概率
-    for (int player = 0; player < NUM_PLAYERS; player++){
-        for (int viewpoint = 0; viewpoint < NUM_VIEWPOINTS; viewpoint++){
-            for (int i = 0; i < NUM_PLAYERS; i++){
-                if (((1 << i) & node->proposal) == 0) continue;
-                double rmax = 0;
-                for (int num_fails = 0; num_fails < NUM_EVIL + 1; num_fails++){
-                    if(node->children[num_fails]->counterfactual_values[i](viewpoint) > rmax){
-                        rmax = node->children[num_fails]->counterfactual_values[i](viewpoint);
-                    }
-                }
-                double sum_dif = 0;
-                for (int num_fails = 0; num_fails < NUM_EVIL + 1; num_fails++){
-                    sum_dif += node->children[num_fails]->counterfactual_values[i](viewpoint);
-                }
-                for (int num_fails = 0; num_fails < NUM_EVIL + 1; num_fails++){
-                    double dif = rmax - node->children[num_fails]->counterfactual_values[i](viewpoint);
-                    node->children[num_fails]->finding_evil->at(player)(viewpoint,i) = node->finding_evil->at(player)(viewpoint,i) * (dif / sum_dif);
-                }
-            }
-        }
-    }
-
 }
 
-//计算Merlin终端节点的cfv值
 static void calculate_merlin_cfvs(LookaheadNode* node, const AssignmentProbs& starting_probs) {
     for (int i = 0; i < NUM_ASSIGNMENTS; i++) {
-        //假设当前分配i=0是梅林、刺客、爪牙、正方、正方
-        
         //获取梅林角色的编号 merlin
-        //merlin=0
         int merlin = ASSIGNMENT_TO_ROLES[i][0];
 
         //刺客角色的编号 assassin
-        //assassin=1
         int assassin = ASSIGNMENT_TO_ROLES[i][1];
 
         //刺客角色的观点编号 assassin_viewpoint
-        //assassin_viewpoint=8
         int assassin_viewpoint = ASSIGNMENT_TO_VIEWPOINT[i][assassin];
 
         //反方编号 evil
-        //evil=6(00110)
         int evil = ASSIGNMENT_TO_EVIL[i];
 
         //到达该分配情况的概率 reach_prob，
@@ -599,12 +450,10 @@ static void calculate_merlin_cfvs(LookaheadNode* node, const AssignmentProbs& st
         //刺客猜对梅林的概率
         double correct_prob = node->merlin_strategy->at(assassin)(assassin_viewpoint, merlin);
 
-        //根据player是否是反方，计算终端结点的cfv
+        //根据player是否是反方，计算结点的cfv
         for (int player = 0; player < NUM_PLAYERS; player++) {
             int viewpoint = ASSIGNMENT_TO_VIEWPOINT[i][player];
-            //假设玩家player在视角viewpoint下已经到达了当前节点，然后计算这种情况下的概率。
             double counterfactual_reach_prob = reach_prob / node->reach_probs[player](viewpoint);
-            //如果当前玩家player在当前角色分配i中是evil角色
             if ((1 << player) & evil) {
                 node->counterfactual_values[player](viewpoint) += counterfactual_reach_prob * (
                     EVIL_WIN_PAYOFF * correct_prob +
@@ -617,7 +466,7 @@ static void calculate_merlin_cfvs(LookaheadNode* node, const AssignmentProbs& st
                 );
             }
         }
-        
+
         //更新悔值
         double assassin_counterfactual_reach_prob = reach_prob / node->reach_probs[assassin](assassin_viewpoint);
         double expected_assassin_payoff = assassin_counterfactual_reach_prob * (
@@ -634,10 +483,8 @@ static void calculate_merlin_cfvs(LookaheadNode* node, const AssignmentProbs& st
 
             node->merlin_regrets->at(assassin)(assassin_viewpoint, assassin_choice) += payoff - expected_assassin_payoff;
         }
-
-
     }
-    
+
     #ifdef CFR_PLUS
     for (int player = 0; player < NUM_PLAYERS; player++) {
         node->merlin_regrets->at(player) = node->merlin_regrets->at(player).max(0.0);
@@ -646,26 +493,16 @@ static void calculate_merlin_cfvs(LookaheadNode* node, const AssignmentProbs& st
 };
 
 //计算正方失败终止节点（terminal nodes）的cfv
-//针对TERMINAL_NO_CONSENSUS和TERMINAL_TOO_MANY_FAILS两种节点
-//这两种节点，都是正方输，反方赢。
 static void calculate_terminal_cfvs(LookaheadNode* node, const AssignmentProbs& starting_probs) {
     for (int i = 0; i < NUM_ASSIGNMENTS; i++) {
-        //获得该角色分配i中evil角色信息
         int evil = ASSIGNMENT_TO_EVIL[i];
-        //计算在当前角色分配i中到达当前节点的概率
         double reach_prob = (*(node->full_reach_probs))(i) * starting_probs(i);
-        //对于每个玩家
         for (int player = 0; player < NUM_PLAYERS; player++) {
-            //获得在当前角色分配i中player的信息集视角viewpoint
             int viewpoint = ASSIGNMENT_TO_VIEWPOINT[i][player];
-            //计算反事实到达概率
             double counterfactual_reach_prob = reach_prob / node->reach_probs[player](viewpoint);
-            //如果当前玩家player在当前角色分配i中是evil角色
             if ((1 << player) & evil) {
-                //将玩家player在信息集viewpoint下的cfv值增加  counterfactual_reach_prob*evil获胜回报
                 node->counterfactual_values[player](viewpoint) += counterfactual_reach_prob * EVIL_WIN_PAYOFF; // In these terminal nodes, evil wins, good loses.
-            } else {//如果是正方角色
-                //将玩家player在信息集viewpoint下的cfv值增加  counterfactual_reach_prob*正方输的回报
+            } else {
                 node->counterfactual_values[player](viewpoint) += counterfactual_reach_prob * GOOD_LOSE_PAYOFF;
             }
         }

@@ -7,7 +7,7 @@ import numpy as np
 import random
 import sys
 
-from data import load_data, MATRIX, get_payoff_vector, get_viewpoint_vector
+from data import load_data, MATRIX, get_payoff_vector, get_viewpoint_vector,load_data_rnn
 
 class CFVMaskAndAdjustLayer(tf.keras.layers.Layer):
     def __init__(self, *args, **kwargs):
@@ -44,7 +44,37 @@ class CFVFromWinProbsLayer(tf.keras.layers.Layer):
         super(CFVFromWinProbsLayer, self).__init__(*args, **kwargs)
 
     def call(self, inps):
+        #print("INP", inp.shape)
         inp_probs = inps[0][:, 5:]
+        #print("INP_PROBS", inp_probs.shape)
+        win_probs = inps[1]
+        #print("WIN_PROBS", win_probs.shape)
+        factual_values = []
+        for player in range(5):
+            #print("==== player", player, "====")
+            good_win_payoff_for_player = tf.constant(get_payoff_vector(player), dtype=tf.float32)
+            #print("good_win_payoff", good_win_payoff_for_player.shape)
+            player_payoff = 2.0 * good_win_payoff_for_player * win_probs - good_win_payoff_for_player
+            #print("player_payoff", player_payoff.shape)
+            factual_values_for_belief_and_player = inp_probs * player_payoff
+            #print("factual_values", factual_values_for_belief_and_player.shape)
+
+            factual_values_for_player = tf.matmul(factual_values_for_belief_and_player, tf.constant(get_viewpoint_vector(player), dtype=tf.float32))
+            #print("factual_values_for_player", factual_values_for_player.shape)
+            factual_values.append(factual_values_for_player)
+
+        result = tf.concat(factual_values, 1)
+        #print("result", result.shape)
+        return result
+    
+class CFVFromWinProbsLayer_v2(tf.keras.layers.Layer):
+    def __init__(self, *args, **kwargs):
+        super(CFVFromWinProbsLayer_v2, self).__init__(*args, **kwargs)
+
+    def call(self, inps):
+        inp = tf.squeeze(inps[0], axis=1)
+        #print("INP", inp.shape)
+        inp_probs = inp[:, 5:]
         #print("INP_PROBS", inp_probs.shape)
         win_probs = inps[1]
         #print("WIN_PROBS", win_probs.shape)
@@ -148,6 +178,41 @@ def create_model_transformer(sequence_length=65, d_model=128, num_heads=4, ff_di
     
     return model
 
+def create_rnn_model():
+    #0.0013
+    # inp = tf.keras.layers.Input(shape=(1,65))
+    # x = tf.keras.layers.SimpleRNN(80, activation='relu')(inp)
+    # x = tf.keras.layers.Dense(80, activation='relu')(x)
+    # out = tf.keras.layers.Dense(75)(x)
+
+    #1.33*10-4
+    # inp = tf.keras.layers.Input(shape=(1,65))
+    # x = tf.keras.layers.SimpleRNN(80, activation='relu')(inp)
+    # x = tf.keras.layers.Dense(80, activation='relu')(x)
+    # win_probs = tf.keras.layers.Dense(60, activation='sigmoid')(x)
+    # out = CFVFromWinProbsLayer_v2()([inp, win_probs])
+
+    #2.38*10-4
+    # inp = tf.keras.layers.Input(shape=(1,65))
+    # x = tf.keras.layers.SimpleRNN(80, activation='elu')(inp)
+    # x = tf.keras.layers.Dense(80, activation='elu')(x)
+    # win_probs = tf.keras.layers.Dense(60, activation='sigmoid')(x)
+    # out = CFVFromWinProbsLayer_v2()([inp, win_probs])
+
+    #7.54*10-5
+    inp = tf.keras.layers.Input(shape=(1,65))
+    x = tf.keras.layers.SimpleRNN(80, activation='relu')(inp)
+    x = tf.keras.layers.Dense(80, activation='relu')(x)
+    x = tf.keras.layers.Dense(80, activation='relu')(x)
+    win_probs = tf.keras.layers.Dense(60, activation='sigmoid')(x)
+    out = CFVFromWinProbsLayer_v2()([inp, win_probs])
+
+
+    model = tf.keras.models.Model(inputs=inp, outputs=out)
+    model.compile(optimizer='adam', loss='mse', metrics=['mse'])
+    return model
+
+#1.26*10-4
 def create_model_v2():
     inp = tf.keras.layers.Input(shape=(65,))
     x = tf.keras.layers.Dense(80, activation='relu')(inp)
@@ -179,33 +244,58 @@ def train(num_succeeds, num_fails, propose_count, model_type):
         model = create_model_unconstrained()
     elif model_type == 'win_probs':
         model = create_model_v2()
-    elif model_type == 'transformer':
-        model = create_model_transformer()
+    elif model_type == 'RNN':
+        model = create_rnn_model()
 
     #加载数据
     print("Loading data...")
-    _, X, Y = load_data(num_succeeds, num_fails, propose_count)
-
-    #设置模型检查点的回调函数，用于保存在验证集上性能最好的模型
     if model_type == 'win_probs':
+        _, X, Y = load_data(num_succeeds, num_fails, propose_count)
         checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
             'models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
             save_best_only=True
         )
-    elif model_type == 'transformer':
+        tensorboard_callback = tf.keras.callbacks.TensorBoard(
+            log_dir='logs/{}_{}_{}'.format(
+                num_succeeds,
+                num_fails,
+                propose_count
+            )
+        )
+    elif model_type == 'RNN':
+        _, X, Y = load_data_rnn(num_succeeds, num_fails, propose_count)
         checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-            'transformer_models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
+            'RNN_models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
             save_best_only=True
         )
-
-    #设置 TensorBoard 的回调函数，用于记录训练过程的日志。
-    tensorboard_callback = tf.keras.callbacks.TensorBoard(
-        log_dir='logs/{}_{}_{}'.format(
-            num_succeeds,
-            num_fails,
-            propose_count
+        tensorboard_callback = tf.keras.callbacks.TensorBoard(
+            log_dir='RNN_logs/{}_{}_{}'.format(
+                num_succeeds,
+                num_fails,
+                propose_count
+            )
         )
-    )
+
+    #设置模型检查点的回调函数，用于保存在验证集上性能最好的模型
+    # if model_type == 'win_probs':
+    #     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    #         'models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
+    #         save_best_only=True
+    #     )
+    # elif model_type == 'RNN':
+    #     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    #         'RNN_models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
+    #         save_best_only=True
+    #     )
+
+    # #设置 TensorBoard 的回调函数，用于记录训练过程的日志。
+    # tensorboard_callback = tf.keras.callbacks.TensorBoard(
+    #     log_dir='logs/{}_{}_{}'.format(
+    #         num_succeeds,
+    #         num_fails,
+    #         propose_count
+    #     )
+    # )
 
     print("Fitting...")
     model.fit(
