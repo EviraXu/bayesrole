@@ -15,3 +15,9 @@ Tue May  7 05:07:47 CST 2024 ==== Generating datapoints...
 Tue May  7 10:16:12 CST 2024 (2, 2, 2) Datapoints: 20000
 Tue May  7 10:16:12 CST 2024 ==== Training neural network... (Takes 30-45 minutes)
 Tue May  7 10:21:00 CST 2024 ==== Done with Succeeds=2, Fails=2, Propose=2
+Tue May  7 10:23:31 CST 2024 ==== Git push done with Succeeds=2, Fails=2, Propose=2
+Tue May  7 10:23:31 CST 2024 ======== Starting training process for: Succeeds=2, Fails=2, Propose=1
+Tue May  7 10:23:31 CST 2024 ==== Generating datapoints...
+Tue May  7 14:49:00 CST 2024 (2, 2, 1) Datapoints: 20000
+Tue May  7 14:49:00 CST 2024 ==== Training neural network... (Takes 30-45 minutes)
+Tue May  7 14:53:48 CST 2024 ==== Done with Succeeds=2, Fails=2, Propose=1
