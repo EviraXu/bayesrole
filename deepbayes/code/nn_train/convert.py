@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 from export_to_fdeep.convert_model import model_to_fdeep_json
-from train import CFVMaskAndAdjustLayer, CFVFromWinProbsLayer, ZeroSumLayer, loss, check_sum
+from train import CFVMaskAndAdjustLayer, CFVFromWinProbsLayer, ZeroSumLayer, loss, check_sum,CFVFromWinProbsLayer_v2
 
 import sys
 import json
@@ -16,6 +16,7 @@ def main():
         'CFVMaskAndAdustLayer': CFVMaskAndAdjustLayer,
         'loss': loss,
         'CFVFromWinProbsLayer': CFVFromWinProbsLayer,
+        'CFVFromWinProbsLayer_v2':CFVFromWinProbsLayer_v2,
         'ZeroSumLayer': ZeroSumLayer,
         'check_sum': check_sum
     })

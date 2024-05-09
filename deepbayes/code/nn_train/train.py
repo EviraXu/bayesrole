@@ -246,6 +246,8 @@ def train(num_succeeds, num_fails, propose_count, model_type):
         model = create_model_v2()
     elif model_type == 'RNN':
         model = create_rnn_model()
+    elif model_type == "transformer":
+        model = create_model_transformer()
 
     #加载数据
     print("Loading data...")

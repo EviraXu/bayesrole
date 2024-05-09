@@ -45,8 +45,9 @@ IFS=$'\n'
 for item in $ITEMS; do
     IFS=' ' read ns nf <<< "$item"
     for i in $(seq 4 -1 0); do
-        if [[ "$ns" == "2" && "$nf" == "1" && ("$i" == "4" || "$i" == "3") ]]; then
-            continue
+        # 检查条件是否为 2 2 4
+        if [ "$ns" -eq 2 ] && [ "$nf" -eq 2 ] && [ "$i" -eq 4 ]; then
+            continue  # 如果是2 2 4，跳过当前循环的后续操作
         fi
         train_section $ns $nf $i
     done

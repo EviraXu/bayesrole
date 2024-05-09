@@ -4,7 +4,7 @@ import os
 
 #获取当前文件的目录
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = '/root/DeepRole-master/deeprole/deeprole_output'
+BASE_DIR = '/root/DeepRole-master/deepbayes/deepbayes_output'
 
 def load_data(num_succeeds, num_fails, propose_count):
     folder = os.path.join(BASE_DIR, '{}_{}_{}'.format(num_succeeds, num_fails, propose_count))
