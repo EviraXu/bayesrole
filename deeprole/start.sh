@@ -45,9 +45,6 @@ IFS=$'\n'
 for item in $ITEMS; do
     IFS=' ' read ns nf <<< "$item"
     for i in $(seq 4 -1 0); do
-        if [[ "$ns" == "2" && "$nf" == "1" && ("$i" == "4" || "$i" == "3") ]]; then
-            continue
-        fi
         train_section $ns $nf $i
     done
 done
