@@ -392,6 +392,28 @@ def show_dense_layer(layer):
         result['bias'] = encode_floats(bias)
     return result
 
+def show_simplernn_layer(layer):
+    """Serialize rnn layer to dict"""
+    weights = layer.get_weights()
+    assert len(weights) == 2 or len(weights) == 3
+    
+    kernel = weights[0]
+    assert kernel.ndim == 2  # kernel should be a 2D array
+    kernel_flat = kernel.flatten()
+
+    recurrent_kernel = weights[1]
+    assert recurrent_kernel.ndim == 2  # recurrent_kernel should be a 2D array
+    recurrent_kernel_flat = recurrent_kernel.flatten()
+
+    result = {
+        'kernel': encode_floats(kernel_flat),
+        'recurrent_kernel': encode_floats(recurrent_kernel_flat)
+    }
+    if len(weights) == 3:
+        bias = weights[2]
+        result['bias'] = encode_floats(bias)
+    return result
+
 
 def show_prelu_layer(layer):
     """Serialize prelu layer to dict"""
@@ -530,6 +552,7 @@ def get_layer_functions_dict():
         'DepthwiseConv2D': show_depthwise_conv_2d_layer,
         'BatchNormalization': show_batch_normalization_layer,
         'Dense': show_dense_layer,
+        'SimpleRNN':show_simplernn_layer,
         'PReLU': show_prelu_layer,
         'Embedding': show_embedding_layer,
         'LSTM': show_lstm_layer,
@@ -617,7 +640,7 @@ def is_ascii(some_string):
     else:
         return True
 
-
+#序列化一个 TensorFlow/Keras 模型中所有层的权重信息。
 def get_all_weights(model):
     """Serialize all weights of the models layers"""
     show_layer_functions = get_layer_functions_dict()
@@ -674,11 +697,13 @@ def set_model_name(model, name):
     else:
         pass  # Model has no name property.
 
-
+#用于将 Keras 的 Sequential 模型转换为等效的 Functional 模型
 def convert_sequential_to_model(model):
     """Convert a sequential model to the underlying functional format"""
     if type(model).__name__ == 'Sequential':
+        # 获取当前模型的名称
         name = get_model_name(model)
+        #处理模型的入站节点
         if hasattr(model, '_inbound_nodes'):
             inbound_nodes = model._inbound_nodes
         elif hasattr(model, 'inbound_nodes'):
@@ -686,21 +711,29 @@ def convert_sequential_to_model(model):
         else:
             raise ValueError('can not get (_)inbound_nodes from model')
         # Since Keras 2.2.0
+        #检查模型的 .model 属性是否就是自己，这是为了处理一些特定情况，例如模型被嵌套或已经是 Functional 模型
         if model.model == model:
+            #创建一个新的输入层，其形状与 Sequential 模型的第一层输入形状相同
             input_layer = Input(batch_shape=model.layers[0].input_shape)
+            #初始化一个变量 prev_layer 用于追踪模型中前一层的输出
             prev_layer = input_layer
             for layer in model.layers:
                 prev_layer = layer(prev_layer)
+            #创建一个新的 Functional 模型，输入是 input_layer，输出是循环结束后的 prev_layer
             funcmodel = Model([input_layer], [prev_layer])
+            #将转换得到的 Functional 模型赋值给 model
             model = funcmodel
         else:
             model = model.model
+        #设置模型的名称
         set_model_name(model, name)
+        #恢复入站节点，以确保模型之间的连接关系不丢失
         if hasattr(model, '_inbound_nodes'):
             model._inbound_nodes = inbound_nodes
         elif hasattr(model, 'inbound_nodes'):
             model.inbound_nodes = inbound_nodes
     assert model.layers
+    #递归处理模型中的子模型
     for i in range(len(model.layers)):
         if type(model.layers[i]).__name__ in ['Model', 'Sequential']:
             model.layers[i] = convert_sequential_to_model(model.layers[i])
@@ -763,25 +796,35 @@ def calculate_hash(model):
         hash_m.update(layer.name.encode('ascii'))
     return hash_m.hexdigest()
 
-
+#将Keras 模型转换为 Frugally-deep（fdeep）格式的 JSON，用于在 C++中使用 frugally-deep 库进行深度学习模型的推理
 def model_to_fdeep_json(model, no_tests=False):
     """Convert any Keras model to the frugally-deep model format."""
 
     # Force creation of underlying functional model.
     # see: https://github.com/fchollet/keras/issues/8136
     # Loss and optimizer type do not matter, since we do not train the model.
+
+    #为了确保模型可以转换为其功能形式，函数首先编译模型。这里选择的损失函数和优化器不影响模型的结构
     model.compile(loss='mse', optimizer='sgd')
 
+    #将序列模型转换为功能模型。
     model = convert_sequential_to_model(model)
 
+    #打印是否生成测试数据的标志。
     print("no_tests:",no_tests)
 
+    #根据 no_tests 标志决定是否生成测试数据。
     test_data = None if no_tests else gen_test_data(model)
 
+    #初始化一个空字典，用于存储最终的 JSON 输出
     json_output = {}
+    #将模型结构转换为 JSON 格式并存储。
     json_output['architecture'] = json.loads(model.to_json())
 
+    #存储 Keras 配置的图像数据格式。
     json_output['image_data_format'] = K.image_data_format()
+
+    #这部分代码使用循环和函数调用来计算不同类型的卷积和池化操作在使用 'valid' 和 'same' 填充时的偏移。
     for depth in range(1, 3, 1):
         json_output['conv2d_valid_offset_depth_' + str(depth)] = \
             check_operation_offset(depth, offset_conv2d_eval, 'valid')
@@ -799,10 +842,14 @@ def model_to_fdeep_json(model, no_tests=False):
         check_operation_offset(1, conv2d_offset_average_pool_eval, 'valid')
     json_output['average_pooling_2d_same_offset'] = \
         check_operation_offset(1, conv2d_offset_average_pool_eval, 'same')
+    
+    #计算并存储模型输入层的形状
     json_output['input_shapes'] = list(map(get_layer_input_shape_shape5, get_model_input_layers(model)))
     if test_data:
         json_output['tests'] = [test_data]
+    #调用先前定义的函数来获取模型的所有权重。
     json_output['trainable_params'] = get_all_weights(model)
+    #计算模型的哈希值，可能用于验证或缓存目的。
     json_output['hash'] = calculate_hash(model)
     return json_output
 
