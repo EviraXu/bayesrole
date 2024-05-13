@@ -69,9 +69,9 @@ std::string random_string(std::string::size_type length)
 }
 
 void print_lookahead_information(const int depth, const int num_succeeds, const int num_fails, const int propose_count, const std::string& model_search_dir) {
-    cerr << "print_lookahead_information" << endl;
+    //cerr << "print_lookahead_information" << endl;
     auto lookahead = create_avalon_lookahead(num_succeeds, num_fails, 0, propose_count, depth, model_search_dir);
-    cerr << "create finish" << endl;
+    //cerr << "create finish" << endl;
     cerr << "                PROPOSE: " << count_lookahead_type(lookahead.get(), PROPOSE) << endl;
     cerr << "                   VOTE: " << count_lookahead_type(lookahead.get(), VOTE) << endl;
     cerr << "                MISSION: " << count_lookahead_type(lookahead.get(), MISSION) << endl;
@@ -129,7 +129,7 @@ void generate_datapoints(
     cerr << "                  Fails: " << num_fails << endl;
     cerr << "              Propose #: " << propose_count << endl;
     cerr << "------------------ Sanity checks -------------------" << endl;
-    cerr << "开始sanity" << endl;
+    //cerr << "开始sanity" << endl;
     print_lookahead_information(depth, num_succeeds, num_fails, propose_count, model_search_dir);
     cerr << "------------------ Loaded Models -------------------" << endl;
     print_loaded_models(model_search_dir);
