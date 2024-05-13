@@ -1,4 +1,4 @@
-TARGET := deepbayes
+TARGET := deeprole
 
 CC := clang++
 

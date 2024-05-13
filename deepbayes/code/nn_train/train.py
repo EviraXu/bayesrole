@@ -178,8 +178,7 @@ def create_model_transformer(sequence_length=65, d_model=128, num_heads=4, ff_di
     
     return model
 
-def create_rnn_model():
-    #0.0013
+#0.0013
     # inp = tf.keras.layers.Input(shape=(1,65))
     # x = tf.keras.layers.SimpleRNN(80, activation='relu')(inp)
     # x = tf.keras.layers.Dense(80, activation='relu')(x)
@@ -198,7 +197,7 @@ def create_rnn_model():
     # x = tf.keras.layers.Dense(80, activation='elu')(x)
     # win_probs = tf.keras.layers.Dense(60, activation='sigmoid')(x)
     # out = CFVFromWinProbsLayer_v2()([inp, win_probs])
-
+def create_rnn_model():
     #7.54*10-5
     inp = tf.keras.layers.Input(shape=(1,65))
     x = tf.keras.layers.SimpleRNN(80, activation='relu')(inp)
@@ -277,28 +276,6 @@ def train(num_succeeds, num_fails, propose_count, model_type):
                 propose_count
             )
         )
-
-    #设置模型检查点的回调函数，用于保存在验证集上性能最好的模型
-    # if model_type == 'win_probs':
-    #     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-    #         'models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
-    #         save_best_only=True
-    #     )
-    # elif model_type == 'RNN':
-    #     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-    #         'RNN_models/{}_{}_{}.h5'.format(num_succeeds, num_fails, propose_count),
-    #         save_best_only=True
-    #     )
-
-    # #设置 TensorBoard 的回调函数，用于记录训练过程的日志。
-    # tensorboard_callback = tf.keras.callbacks.TensorBoard(
-    #     log_dir='logs/{}_{}_{}'.format(
-    #         num_succeeds,
-    #         num_fails,
-    #         propose_count
-    #     )
-    # )
-
     print("Fitting...")
     model.fit(
         x=X,

@@ -8,6 +8,7 @@ int LookaheadNode::round() const {
 
 //创建并返回一个新的 LookaheadNode 实例，这个实例被初始化为一个根提议节点。它包括成功和失败的任务数量、提议者、提议次数等属性。
 std::unique_ptr<LookaheadNode> LookaheadNode::RootProposal(int num_succeeds, int num_fails, int proposer, int propose_count) {
+    printf("RootProposal\n");
     auto result = std::make_unique<LookaheadNode>();
     result->type = PROPOSE;
     result->num_succeeds = num_succeeds;
@@ -57,18 +58,22 @@ std::string LookaheadNode::typeAsString() const {
 //这个递归函数用于向决策树中添加子节点。根据节点的类型，函数将生成对应的子节点。
 //例如，对于提议节点，它将为每个可能的提议添加一个投票节点。对于投票节点，它将根据投票结果添加一个新的提议节点或任务节点。
 void add_lookahead_children(const int depth, LookaheadNode* node) {
+    //printf("add_lookahead_children\n");
     switch (node->type) {
     case PROPOSE: {
+        printf("PROPOSE\n");
         const int* index_to_proposal = (ROUND_TO_PROPOSE_SIZE[node->round()] == 2) ? INDEX_TO_PROPOSAL_2 : INDEX_TO_PROPOSAL_3;
         for (int i = 0; i < NUM_PROPOSAL_OPTIONS; i++) {
             auto new_child = LookaheadNode::CopyParent(*node);
             new_child->type = VOTE;
+            printf("propose -> vote\n");
             new_child->proposal = index_to_proposal[i];
             add_lookahead_children(depth - 1, new_child.get());
             node->children.push_back(std::move(new_child));
         }
     } break;
     case VOTE: {
+        printf("VOTE\n");
         for (int i = 0; i < (1 << NUM_PLAYERS); i++) {
             auto new_child = LookaheadNode::CopyParent(*node);
             new_child->proposer = (new_child->proposer + 1) % NUM_PLAYERS;
@@ -80,15 +85,19 @@ void add_lookahead_children(const int depth, LookaheadNode* node) {
                 // Vote fails
                 if (new_child->propose_count == 5) {//所有人的提议都没有被通过
                     new_child->type = TERMINAL_NO_CONSENSUS;
+                    printf("vote -> no consensus\n");
                 } else if (depth == 0) {
                     new_child->type = TERMINAL_PROPOSE_NN;
+                    printf("vote -> nn\n");
                 } else {
                     new_child->type = PROPOSE;//继续提议
+                    printf("vote -> propose\n");
                 }
             } else {
                 // Vote passes
                 new_child->propose_count = 0;
                 new_child->type = MISSION;//提议通过，开始执行任务
+                printf("vote -> mission\n");
             }
 
             add_lookahead_children(depth, new_child.get());
@@ -96,6 +105,7 @@ void add_lookahead_children(const int depth, LookaheadNode* node) {
         }
     } break;
     case MISSION: {
+        printf("MISSION\n");
         for (int i = 0; i < NUM_EVIL + 1; i++) {
             auto new_child = LookaheadNode::CopyParent(*node);
             if (i == 0) {//任务成功
@@ -106,12 +116,16 @@ void add_lookahead_children(const int depth, LookaheadNode* node) {
             }
             if (new_child->num_fails == 3) {//达成任务失败条件，游戏结束
                 new_child->type = TERMINAL_TOO_MANY_FAILS;
+                printf("mission -> fails\n");
             } else if (new_child->num_succeeds == 3) {//达成任务成功条件，游戏结束
                 new_child->type = TERMINAL_MERLIN;
+                printf("mission -> merlin\n");
             } else if (depth == 0) {
                 new_child->type = TERMINAL_PROPOSE_NN;
+                printf("mission -> nn\n");
             } else {//游戏继续，从propose
                 new_child->type = PROPOSE;
+                printf("mission -> propose\n");
             }
             add_lookahead_children(depth, new_child.get());
             node->children.push_back(std::move(new_child));
@@ -125,6 +139,7 @@ void add_lookahead_children(const int depth, LookaheadNode* node) {
 //这包括设置概率向量，以及根据节点类型初始化策略和累计遗憾数据结构。对于某些终端节点，它还会加载神经网络模型。
 void populate_lookahead_fields(const std::string& model_search_dir, LookaheadNode* node) {
     //改-初始化
+    printf("populate_lookahead_fields\n");
     node->finding_evil = std::make_unique<std::array<MerlinData, NUM_PLAYERS>>();
     node->finding_merlin = std::make_unique<std::array<MerlinData, NUM_PLAYERS>>();
     double probability = 1.0 / NUM_PLAYERS;
@@ -208,7 +223,8 @@ std::unique_ptr<LookaheadNode> create_avalon_lookahead(
     const int propose_count,
     const int depth,
     const std::string& model_search_dir) {
-
+    
+    printf("create_avalon_lookahead\n");
     auto root_node = LookaheadNode::RootProposal(num_succeeds, num_fails, proposer, propose_count);
     add_lookahead_children(depth, root_node.get());
     populate_lookahead_fields(model_search_dir, root_node.get());

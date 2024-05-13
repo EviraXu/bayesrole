@@ -11,6 +11,8 @@
 #include <cassert>
 #include <fstream>
 #include <iostream>
+#include <vector>
+#include <Eigen/Dense>
 
 #include "./lookup_tables.h"
 
@@ -23,6 +25,14 @@ static EigenVector calculate_dense_layer(
     const DenseBiases& biases,
     const activation_type activation
 ) {
+
+    // std::cout << "dense input: [";
+    // for (int i = 0; i < input.size(); ++i) {
+    //     std::cout << input(i);
+    //     if (i != input.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
     //将输入向量 input 转置后与权重矩阵 weights 相乘，然后加上偏置向量 biases，最后再次进行转置
     EigenVector result = (input.matrix().transpose() * weights + biases.transpose()).transpose().array();
 
@@ -35,8 +45,100 @@ static EigenVector calculate_dense_layer(
         break;
     default: break;
     }
+
+    // std::cout << "dense output: [";
+    // for (int i = 0; i < result.size(); ++i) {
+    //     std::cout << result(i);
+    //     if (i != result.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
     return result;
 }
+
+static EigenVector calculate_rnn_layer(const EigenVector& input,
+                                       const DenseWeights& weights_x,
+                                       const DenseWeights& weights_h,
+                                       const DenseBiases& biases,
+                                       const activation_type activation) {
+    
+    // std::cout << "rnn input: [";
+    // for (int i = 0; i < input.size(); ++i) {
+    //     std::cout << input(i);
+    //     if (i != input.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
+    // 假设 initial_state 是一个全零向量，其大小与 weights_h 的列数相同
+    EigenVector state = EigenVector::Zero(weights_h.cols());
+
+    // 计算新状态
+    //EigenVector new_state = weights_h * state;
+    //EigenVector new_state = (weights_h.array()) * state + (weights_x.array()) * input + biases.array();
+    EigenVector new_state = (weights_h.array()) * state + (input.matrix().transpose() * weights_x + biases.transpose()).transpose().array();
+    // 应用激活函数
+    switch (activation) {
+        case RELU:
+            new_state = new_state.unaryExpr([](float x) { return std::max(0.0f, x); });
+            break;
+        case SIGMOID:
+            new_state = new_state.unaryExpr([](float x) { return 1.0f / (1.0f + std::exp(-x)); });
+            break;
+        default:
+            // 默认使用 tanh，常见于 RNN
+            new_state = new_state.unaryExpr([](float x) { return std::tanh(x); });
+            break;
+    }
+    // std::cout << "rnn output: [";
+    // for (int i = 0; i < new_state.size(); ++i) {
+    //     std::cout << new_state(i);
+    //     if (i != new_state.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+    // return new_state;
+}
+
+// 修改后的 RNN 层计算函数
+// static EigenVector calculate_rnn_layer(const EigenVector& input,
+//                                        const EigenVector& prev_state,
+//                                        const DenseWeights& weights_x,
+//                                        const DenseWeights& weights_h,
+//                                        const DenseBiases& biases,
+//                                        const activation_type activation) {
+//     // 计算新状态
+//     EigenVector new_state = (weights_h.array()) * prev_state + (weights_x.array()) * input + biases.array();
+
+//     // 应用激活函数
+//     switch (activation) {
+//         case RELU:
+//             new_state = new_state.unaryExpr([](float x) { return std::max(0.0f, x); });
+//             break;
+//         case SIGMOID:
+//             new_state = new_state.unaryExpr([](float x) { return 1.0f / (1.0f + std::exp(-x)); });
+//             break;
+//         default:
+//             new_state = new_state.unaryExpr([](float x) { return std::tanh(x); });
+//             break;
+//     }
+//     return new_state;
+// }
+
+// std::vector<EigenVector> process_rnn_sequence(const std::vector<EigenVector>& sequence,
+//                                               const DenseWeights& weights_x,
+//                                               const DenseWeights& weights_h,
+//                                               const DenseBiases& biases,
+//                                               const activation_type activation) {
+//     std::vector<EigenVector> output_sequence;
+//     EigenVector state = EigenVector::Zero(weights_h.cols());  // 初始状态全零
+
+//     for (const auto& input : sequence) {
+//         state = calculate_rnn_layer(input, state, weights_x, weights_h, biases, activation);
+//         output_sequence.push_back(state);
+//     }
+
+//     return output_sequence;
+// }
+
 
 //给定输入向量 inp (belief)和 CFV,计算最终结果
 static EigenVector calculate_cfv_mask_and_adjust_layer(const EigenVector& inp, const EigenVector& cfvs) {
@@ -105,11 +207,57 @@ static EigenVector calculate_cfv_from_win_layer(const EigenVector& input_probs, 
     return result;
 };
 
+static EigenVector calculate_cfv_from_win_layer_v2(const EigenVector& input_probs, const EigenVector& win_probs) {
+    EigenVector result(NUM_PLAYERS * NUM_VIEWPOINTS);
+    result.setZero();
+
+    // std::cout << "input_probs: [";
+    // for (int i = 0; i < input_probs.size(); ++i) {
+    //     std::cout << input_probs(i);
+    //     if (i != input_probs.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
+    // std::cout << "win_probs: [";
+    // for (int i = 0; i < win_probs.size(); ++i) {
+    //     std::cout << win_probs(i);
+    //     if (i != win_probs.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
+    for (int assignment = 0; assignment < NUM_ASSIGNMENTS; assignment++) {
+        //计算正方胜利的期望收益
+        float good_expected_payoff = 2 * GOOD_WIN_PAYOFF * win_probs(assignment) - GOOD_WIN_PAYOFF;
+        //计算反方胜利的期望收益
+        float bad_expected_payoff = good_expected_payoff * EVIL_LOSE_PAYOFF;
+
+        for (int player = 0; player < NUM_PLAYERS; player++) {
+            int viewpoint = ASSIGNMENT_TO_VIEWPOINT[assignment][player];
+            //根据视角的位置判断是正方视角还是反方视角
+            float payoff = (viewpoint < NUM_GOOD_VIEWPOINTS) ? good_expected_payoff : bad_expected_payoff;
+            //
+            result(NUM_VIEWPOINTS*player + viewpoint) += input_probs(NUM_PLAYERS + assignment) * payoff;
+        }
+    }
+
+    return result;
+};
+
 //用于确保层输出的总和为零
 static EigenVector calculate_zero_sum_layer(const EigenVector& input) {
     EigenVector result = input;
     result -= input.sum() / (NUM_VIEWPOINTS * NUM_PLAYERS);
     return result;
+}
+
+std::vector<EigenVector> get_sequence(const EigenVector& input) {
+    // 你需要实现这个函数来转换或解包 input 为一个序列
+    // 这里是一个假设的实现，具体实现需要根据你的实际数据结构来决定
+    std::vector<EigenVector> sequence;
+    // 假设 input 可以某种方式转换为一个序列
+    // 例如，拆分一个大的 EigenVector 为多个小的时间步长向量
+    sequence.push_back(input);
+    return sequence;
 }
 
 //预测给定输入向量的输出。它按照定义的层顺序遍历每一层，根据每层的类型和前置层的输出来计算当前层的输出。
@@ -136,6 +284,17 @@ EigenVector model::predict(const EigenVector& input) const {
         switch (type) {
         case INPUT: break;
         //
+        case RNN: {
+            assert(parents.size() == 1);
+            const EigenVector& input = layer_results[parents.front()];
+            layer_results[id] = calculate_rnn_layer(input,this->layer_kernel.at(id),this->layer_recurrent_kernel.at(id),this->layer_biases.at(id),activation);
+            // const auto& input_sequence = get_sequence(layer_results[parents.front()]);
+            // std::vector<EigenVector> rnn_output = process_rnn_sequence(input_sequence,this->layer_kernel.at(id),this->layer_recurrent_kernel.at(id),this->layer_biases.at(id),activation);
+            // if (!rnn_output.empty()) {
+            //     layer_results[id] = rnn_output.back();  // 只存储最后一个时间步的结果
+            // }
+
+        }break;
         case DENSE: {
             assert(parents.size() == 1);
             const EigenVector& input = layer_results[parents.front()];
@@ -152,6 +311,12 @@ EigenVector model::predict(const EigenVector& input) const {
             const EigenVector& input_1 = layer_results[parents.front()];
             const EigenVector& input_2 = layer_results[parents.back()];
             layer_results[id] = calculate_cfv_from_win_layer(input_1, input_2);
+        } break;
+        case CFV_FROM_WIN_v2: {
+            assert(parents.size() == 2);
+            const EigenVector& input_1 = layer_results[parents.front()];
+            const EigenVector& input_2 = layer_results[parents.back()];
+            layer_results[id] = calculate_cfv_from_win_layer_v2(input_1, input_2);
         } break;
         case ZERO_SUM: {
             assert(parents.size() == 1);
@@ -207,15 +372,43 @@ DenseBiases load_biases(const nlohmann::json& json_data, const int output_size) 
     return result;
 }
 
+
+
 //运行模型的测试用例并进行结果验证
 void run_test(const nlohmann::json& test_case, const model& test_model) {
     const int input_size = test_case["inputs"][0]["shape"][4];
+    //printf("Input size:%d\n",input_size);
     const int output_size = test_case["outputs"][0]["shape"][4];
+    //printf("Output size:%d\n",output_size);
+
 
     EigenVector input_vec = load_biases(test_case["inputs"][0]["values"], input_size).array();
+    
+    // std::cout << "test input_vec: [";
+    // for (int i = 0; i < input_vec.size(); ++i) {
+    //     std::cout << input_vec(i);
+    //     if (i != input_vec.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
+
     EigenVector output_vec = load_biases(test_case["outputs"][0]["values"], output_size).array();
+    // std::cout << "test output_vec: [";
+    // for (int i = 0; i < output_vec.size(); ++i) {
+    //     std::cout << output_vec(i);
+    //     if (i != output_vec.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
 
     EigenVector result = test_model.predict(input_vec);
+
+    // std::cout << "result: [";
+    // for (int i = 0; i < result.size(); ++i) {
+    //     std::cout << result(i);
+    //     if (i != result.size() - 1) std::cout << ", ";
+    // }
+    // std::cout << "]" << std::endl;
+
 
     if (result.size() != output_size) {
         std::cerr << "Result size: (" << result.rows() << ", " << result.cols() << "). Size: " << result.size() << std::endl;
@@ -284,7 +477,15 @@ model model::load_model(const std::string& filename) {
             result.layer_info[current_id] = std::make_pair(CFV_MASK, NA);
         } else if (layer_class_name == "CFVFromWinProbsLayer") {
             result.layer_info[current_id] = std::make_pair(CFV_FROM_WIN, NA);
-        } else if (layer_class_name == "ZeroSumLayer") {
+        }else if (layer_class_name == "CFVFromWinProbsLayer_v2") {
+            result.layer_info[current_id] = std::make_pair(CFV_FROM_WIN_v2, NA);
+        }else if (layer_class_name == "SimpleRNN") {
+            result.layer_info[current_id] = std::make_pair(RNN, RELU);
+            const int output_size = layer["config"]["units"];
+            result.layer_kernel[current_id] = load_weights(json_data["trainable_params"][layer_name]["kernel"], output_size);
+            result.layer_recurrent_kernel[current_id] = load_weights(json_data["trainable_params"][layer_name]["recurrent_kernel"], output_size);
+            result.layer_biases[current_id] = load_biases(json_data["trainable_params"][layer_name]["bias"], output_size);
+        }else if (layer_class_name == "ZeroSumLayer") {
             result.layer_info[current_id] = std::make_pair(ZERO_SUM, NA);
         }
 
