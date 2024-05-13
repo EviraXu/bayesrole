@@ -52,3 +52,5 @@ for item in $ITEMS; do
         train_section $ns $nf $i
     done
 done
+
+#./new_start.sh

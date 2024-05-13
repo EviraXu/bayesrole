@@ -69,7 +69,7 @@ std::string random_string(std::string::size_type length)
 }
 
 void print_lookahead_information(const int depth, const int num_succeeds, const int num_fails, const int propose_count, const std::string& model_search_dir) {
-    //cerr << "print_lookahead_information" << endl;
+    cerr << "print_lookahead_information" << endl;
     auto lookahead = create_avalon_lookahead(num_succeeds, num_fails, 0, propose_count, depth, model_search_dir);
     //cerr << "create finish" << endl;
     cerr << "                PROPOSE: " << count_lookahead_type(lookahead.get(), PROPOSE) << endl;

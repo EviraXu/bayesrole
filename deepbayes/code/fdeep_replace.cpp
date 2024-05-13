@@ -95,7 +95,7 @@ static EigenVector calculate_rnn_layer(const EigenVector& input,
     //     if (i != new_state.size() - 1) std::cout << ", ";
     // }
     // std::cout << "]" << std::endl;
-    // return new_state;
+     return new_state;
 }
 
 // 修改后的 RNN 层计算函数
@@ -250,15 +250,6 @@ static EigenVector calculate_zero_sum_layer(const EigenVector& input) {
     return result;
 }
 
-std::vector<EigenVector> get_sequence(const EigenVector& input) {
-    // 你需要实现这个函数来转换或解包 input 为一个序列
-    // 这里是一个假设的实现，具体实现需要根据你的实际数据结构来决定
-    std::vector<EigenVector> sequence;
-    // 假设 input 可以某种方式转换为一个序列
-    // 例如，拆分一个大的 EigenVector 为多个小的时间步长向量
-    sequence.push_back(input);
-    return sequence;
-}
 
 //预测给定输入向量的输出。它按照定义的层顺序遍历每一层，根据每层的类型和前置层的输出来计算当前层的输出。
 EigenVector model::predict(const EigenVector& input) const {
@@ -288,12 +279,6 @@ EigenVector model::predict(const EigenVector& input) const {
             assert(parents.size() == 1);
             const EigenVector& input = layer_results[parents.front()];
             layer_results[id] = calculate_rnn_layer(input,this->layer_kernel.at(id),this->layer_recurrent_kernel.at(id),this->layer_biases.at(id),activation);
-            // const auto& input_sequence = get_sequence(layer_results[parents.front()]);
-            // std::vector<EigenVector> rnn_output = process_rnn_sequence(input_sequence,this->layer_kernel.at(id),this->layer_recurrent_kernel.at(id),this->layer_biases.at(id),activation);
-            // if (!rnn_output.empty()) {
-            //     layer_results[id] = rnn_output.back();  // 只存储最后一个时间步的结果
-            // }
-
         }break;
         case DENSE: {
             assert(parents.size() == 1);
@@ -425,6 +410,9 @@ void run_test(const nlohmann::json& test_case, const model& test_model) {
             std::cerr << output_vec.transpose().leftCols(6) << std::endl;
             throw std::domain_error("results don't match");
         }
+        // else{
+        //     std::cerr << "Test Pass" << std::endl;
+        // }
     }
 }
 
