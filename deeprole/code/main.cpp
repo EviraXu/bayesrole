@@ -263,7 +263,7 @@ int main(int argc, char* argv[]) {
     std::string s_num_datapoints;
     std::string s_num_iterations;
     std::string s_num_wait_iters;
-    std::string model_search_dir = "models";
+    std::string model_search_dir = "deeprole_models_v2";
     std::string out_dir = "deeprole_output";
     std::string file_suffix;
     std::string s_num_succeeds;
