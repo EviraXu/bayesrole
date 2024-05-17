@@ -359,7 +359,8 @@ void calculate_strategy(LookaheadNode* node, const double cum_strat_weight) {
             //改-更新策略
             MerlinData tmp_strategy;
             MerlinData finding_merlin = node->finding_merlin->at(i);
-            tmp_strategy = 0.5*finding_merlin + 0.5*player_strategy;
+            //tmp_strategy = 0.5*finding_merlin + 0.5*player_strategy;
+            tmp_strategy = player_strategy;
             MerlinData tmp_holder = tmp_strategy.colwise() / tmp_strategy.rowwise().sum();
             
             //MerlinData tmp_holder = player_strategy.colwise() / player_strategy.rowwise().sum();
