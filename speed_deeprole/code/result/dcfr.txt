@@ -1,0 +1,409 @@
+Iteration 0 consecutive_low_change_count 0
+Iteration 0: Weight 0; Strategy Change = 0.131378
+Iteration 1 consecutive_low_change_count 0
+Iteration 1: Weight 0.25; Strategy Change = 0.0310801
+Iteration 2 consecutive_low_change_count 0
+Iteration 2: Weight 0.694444; Strategy Change = 0.000335541
+Iteration 3 consecutive_low_change_count 5
+Iteration 3: Weight 1.25694; Strategy Change = 0
+Iteration 4 consecutive_low_change_count 10
+Iteration 4: Weight 1.89694; Strategy Change = 0
+Iteration 5 consecutive_low_change_count 15
+Iteration 5: Weight 2.59139; Strategy Change = 0
+Iteration 6 consecutive_low_change_count 20
+Iteration 6: Weight 3.32608; Strategy Change = 0
+Iteration 7 consecutive_low_change_count 25
+Iteration 7: Weight 4.09171; Strategy Change = 0
+Iteration 8 consecutive_low_change_count 30
+Iteration 8: Weight 4.88183; Strategy Change = 0
+Iteration 9 consecutive_low_change_count 35
+Iteration 9: Weight 5.69183; Strategy Change = 0
+Iteration 10 consecutive_low_change_count 40
+Iteration 10: Weight 6.51828; Strategy Change = 0
+Iteration 11 consecutive_low_change_count 45
+Iteration 11: Weight 7.35856; Strategy Change = 0
+Iteration 12 consecutive_low_change_count 50
+Iteration 12: Weight 8.21063; Strategy Change = 0
+Iteration 13 consecutive_low_change_count 55
+Iteration 13: Weight 9.07287; Strategy Change = 0
+Iteration 14 consecutive_low_change_count 60
+Iteration 14: Weight 9.94398; Strategy Change = 0
+Iteration 15 consecutive_low_change_count 65
+Iteration 15: Weight 10.8229; Strategy Change = 0
+Iteration 16 consecutive_low_change_count 70
+Iteration 16: Weight 11.7087; Strategy Change = 0
+Iteration 17 consecutive_low_change_count 75
+Iteration 17: Weight 12.6007; Strategy Change = 0
+Iteration 18 consecutive_low_change_count 80
+Iteration 18: Weight 13.4982; Strategy Change = 0
+Iteration 19 consecutive_low_change_count 85
+Iteration 19: Weight 14.4007; Strategy Change = 0
+Iteration 20 consecutive_low_change_count 90
+Iteration 20: Weight 15.3077; Strategy Change = 0
+Iteration 21 consecutive_low_change_count 95
+Iteration 21: Weight 16.2189; Strategy Change = 0
+Iteration 22 consecutive_low_change_count 100
+Iteration 22: Weight 17.1338; Strategy Change = 0
+Iteration 23 consecutive_low_change_count 105
+Iteration 23: Weight 18.0522; Strategy Change = 0
+Iteration 24 consecutive_low_change_count 110
+Iteration 24: Weight 18.9738; Strategy Change = 0
+Iteration 25 consecutive_low_change_count 115
+Iteration 25: Weight 19.8984; Strategy Change = 0
+Iteration 26 consecutive_low_change_count 120
+Iteration 26: Weight 20.8257; Strategy Change = 0
+Iteration 27 consecutive_low_change_count 125
+Iteration 27: Weight 21.7555; Strategy Change = 0
+Iteration 28 consecutive_low_change_count 130
+Iteration 28: Weight 22.6877; Strategy Change = 0
+Iteration 29 consecutive_low_change_count 135
+Iteration 29: Weight 23.6222; Strategy Change = 0
+Iteration 30 consecutive_low_change_count 140
+Iteration 30: Weight 24.5587; Strategy Change = 0
+Iteration 31 consecutive_low_change_count 145
+Iteration 31: Weight 25.4972; Strategy Change = 0
+Iteration 32 consecutive_low_change_count 150
+Iteration 32: Weight 26.4375; Strategy Change = 0
+Iteration 33 consecutive_low_change_count 155
+Iteration 33: Weight 27.3795; Strategy Change = 0
+Iteration 34 consecutive_low_change_count 160
+Iteration 34: Weight 28.3232; Strategy Change = 0
+Iteration 35 consecutive_low_change_count 165
+Iteration 35: Weight 29.2684; Strategy Change = 0
+Iteration 36 consecutive_low_change_count 170
+Iteration 36: Weight 30.2151; Strategy Change = 0
+Iteration 37 consecutive_low_change_count 175
+Iteration 37: Weight 31.1632; Strategy Change = 0
+Iteration 38 consecutive_low_change_count 180
+Iteration 38: Weight 32.1125; Strategy Change = 0
+Iteration 39 consecutive_low_change_count 185
+Iteration 39: Weight 33.0632; Strategy Change = 0
+Iteration 40 consecutive_low_change_count 190
+Iteration 40: Weight 34.015; Strategy Change = 0
+Iteration 41 consecutive_low_change_count 195
+Iteration 41: Weight 34.9679; Strategy Change = 0
+Iteration 42 consecutive_low_change_count 200
+Iteration 42: Weight 35.9219; Strategy Change = 0
+Iteration 43 consecutive_low_change_count 205
+Iteration 43: Weight 36.877; Strategy Change = 0
+Iteration 44 consecutive_low_change_count 210
+Iteration 44: Weight 37.8331; Strategy Change = 0
+Iteration 45 consecutive_low_change_count 215
+Iteration 45: Weight 38.7901; Strategy Change = 0
+Iteration 46 consecutive_low_change_count 220
+Iteration 46: Weight 39.748; Strategy Change = 0
+Iteration 47 consecutive_low_change_count 225
+Iteration 47: Weight 40.7067; Strategy Change = 0
+Iteration 48 consecutive_low_change_count 230
+Iteration 48: Weight 41.6663; Strategy Change = 0
+Iteration 49 consecutive_low_change_count 235
+Iteration 49: Weight 42.6267; Strategy Change = 0
+Iteration 50 consecutive_low_change_count 240
+Iteration 50: Weight 43.5879; Strategy Change = 0
+Iteration 51 consecutive_low_change_count 245
+Iteration 51: Weight 44.5498; Strategy Change = 0
+Iteration 52 consecutive_low_change_count 250
+Iteration 52: Weight 45.5124; Strategy Change = 0
+Iteration 53 consecutive_low_change_count 255
+Iteration 53: Weight 46.4757; Strategy Change = 0
+Iteration 54 consecutive_low_change_count 260
+Iteration 54: Weight 47.4397; Strategy Change = 0
+Iteration 55 consecutive_low_change_count 265
+Iteration 55: Weight 48.4043; Strategy Change = 0
+Iteration 56 consecutive_low_change_count 270
+Iteration 56: Weight 49.3695; Strategy Change = 0
+Iteration 57 consecutive_low_change_count 275
+Iteration 57: Weight 50.3353; Strategy Change = 0
+Iteration 58 consecutive_low_change_count 280
+Iteration 58: Weight 51.3017; Strategy Change = 0
+Iteration 59 consecutive_low_change_count 285
+Iteration 59: Weight 52.2687; Strategy Change = 0
+Iteration 60 consecutive_low_change_count 290
+Iteration 60: Weight 53.2361; Strategy Change = 0
+Iteration 61 consecutive_low_change_count 295
+Iteration 61: Weight 54.2041; Strategy Change = 0
+Iteration 62 consecutive_low_change_count 300
+Iteration 62: Weight 55.1727; Strategy Change = 0
+Iteration 63 consecutive_low_change_count 305
+Iteration 63: Weight 56.1416; Strategy Change = 0
+Iteration 64 consecutive_low_change_count 310
+Iteration 64: Weight 57.1111; Strategy Change = 0
+Iteration 65 consecutive_low_change_count 315
+Iteration 65: Weight 58.081; Strategy Change = 0
+Iteration 66 consecutive_low_change_count 320
+Iteration 66: Weight 59.0514; Strategy Change = 0
+Iteration 67 consecutive_low_change_count 325
+Iteration 67: Weight 60.0222; Strategy Change = 0
+Iteration 68 consecutive_low_change_count 330
+Iteration 68: Weight 60.9934; Strategy Change = 0
+Iteration 69 consecutive_low_change_count 335
+Iteration 69: Weight 61.9651; Strategy Change = 0
+Iteration 70 consecutive_low_change_count 340
+Iteration 70: Weight 62.9371; Strategy Change = 0
+Iteration 71 consecutive_low_change_count 345
+Iteration 71: Weight 63.9095; Strategy Change = 0
+Iteration 72 consecutive_low_change_count 350
+Iteration 72: Weight 64.8823; Strategy Change = 0
+Iteration 73 consecutive_low_change_count 355
+Iteration 73: Weight 65.8555; Strategy Change = 0
+Iteration 74 consecutive_low_change_count 360
+Iteration 74: Weight 66.829; Strategy Change = 0
+Iteration 75 consecutive_low_change_count 365
+Iteration 75: Weight 67.8028; Strategy Change = 0
+Iteration 76 consecutive_low_change_count 370
+Iteration 76: Weight 68.777; Strategy Change = 0
+Iteration 77 consecutive_low_change_count 375
+Iteration 77: Weight 69.7516; Strategy Change = 0
+Iteration 78 consecutive_low_change_count 380
+Iteration 78: Weight 70.7264; Strategy Change = 0
+Iteration 79 consecutive_low_change_count 385
+Iteration 79: Weight 71.7016; Strategy Change = 0
+Iteration 80 consecutive_low_change_count 390
+Iteration 80: Weight 72.677; Strategy Change = 0
+Iteration 81 consecutive_low_change_count 395
+Iteration 81: Weight 73.6528; Strategy Change = 0
+Iteration 82 consecutive_low_change_count 400
+Iteration 82: Weight 74.6288; Strategy Change = 0
+Iteration 83 consecutive_low_change_count 405
+Iteration 83: Weight 75.6052; Strategy Change = 0
+Iteration 84 consecutive_low_change_count 410
+Iteration 84: Weight 76.5818; Strategy Change = 0
+Iteration 85 consecutive_low_change_count 415
+Iteration 85: Weight 77.5586; Strategy Change = 0
+Iteration 86 consecutive_low_change_count 420
+Iteration 86: Weight 78.5358; Strategy Change = 0
+Iteration 87 consecutive_low_change_count 425
+Iteration 87: Weight 79.5132; Strategy Change = 0
+Iteration 88 consecutive_low_change_count 430
+Iteration 88: Weight 80.4908; Strategy Change = 0
+Iteration 89 consecutive_low_change_count 435
+Iteration 89: Weight 81.4687; Strategy Change = 0
+Iteration 90 consecutive_low_change_count 440
+Iteration 90: Weight 82.4469; Strategy Change = 0
+Iteration 91 consecutive_low_change_count 445
+Iteration 91: Weight 83.4253; Strategy Change = 0
+Iteration 92 consecutive_low_change_count 450
+Iteration 92: Weight 84.4039; Strategy Change = 0
+Iteration 93 consecutive_low_change_count 455
+Iteration 93: Weight 85.3827; Strategy Change = 0
+Iteration 94 consecutive_low_change_count 460
+Iteration 94: Weight 86.3618; Strategy Change = 0
+Iteration 95 consecutive_low_change_count 465
+Iteration 95: Weight 87.341; Strategy Change = 0
+Iteration 96 consecutive_low_change_count 470
+Iteration 96: Weight 88.3205; Strategy Change = 0
+Iteration 97 consecutive_low_change_count 475
+Iteration 97: Weight 89.3002; Strategy Change = 0
+Iteration 98 consecutive_low_change_count 480
+Iteration 98: Weight 90.2801; Strategy Change = 0
+Iteration 99 consecutive_low_change_count 485
+Iteration 99: Weight 91.2602; Strategy Change = 0
+Iteration 100 consecutive_low_change_count 490
+Iteration 100: Weight 92.2405; Strategy Change = 0
+Iteration 101 consecutive_low_change_count 495
+Iteration 101: Weight 93.221; Strategy Change = 0
+Iteration 102 consecutive_low_change_count 500
+Iteration 102: Weight 94.2017; Strategy Change = 0
+Iteration 103 consecutive_low_change_count 505
+Iteration 103: Weight 95.1826; Strategy Change = 0
+Iteration 104 consecutive_low_change_count 510
+Iteration 104: Weight 96.1636; Strategy Change = 0
+Iteration 105 consecutive_low_change_count 515
+Iteration 105: Weight 97.1448; Strategy Change = 0
+Iteration 106 consecutive_low_change_count 520
+Iteration 106: Weight 98.1262; Strategy Change = 0
+Iteration 107 consecutive_low_change_count 525
+Iteration 107: Weight 99.1078; Strategy Change = 0
+Iteration 108 consecutive_low_change_count 530
+Iteration 108: Weight 100.09; Strategy Change = 0
+Iteration 109 consecutive_low_change_count 535
+Iteration 109: Weight 101.071; Strategy Change = 0
+Iteration 110 consecutive_low_change_count 540
+Iteration 110: Weight 102.053; Strategy Change = 0
+Iteration 111 consecutive_low_change_count 545
+Iteration 111: Weight 103.036; Strategy Change = 0
+Iteration 112 consecutive_low_change_count 550
+Iteration 112: Weight 104.018; Strategy Change = 0
+Iteration 113 consecutive_low_change_count 555
+Iteration 113: Weight 105.001; Strategy Change = 0
+Iteration 114 consecutive_low_change_count 560
+Iteration 114: Weight 105.983; Strategy Change = 0
+Iteration 115 consecutive_low_change_count 565
+Iteration 115: Weight 106.966; Strategy Change = 0
+Iteration 116 consecutive_low_change_count 570
+Iteration 116: Weight 107.949; Strategy Change = 0
+Iteration 117 consecutive_low_change_count 575
+Iteration 117: Weight 108.932; Strategy Change = 0
+Iteration 118 consecutive_low_change_count 580
+Iteration 118: Weight 109.915; Strategy Change = 0
+Iteration 119 consecutive_low_change_count 585
+Iteration 119: Weight 110.899; Strategy Change = 0
+Iteration 120 consecutive_low_change_count 590
+Iteration 120: Weight 111.882; Strategy Change = 0
+Iteration 121 consecutive_low_change_count 595
+Iteration 121: Weight 112.866; Strategy Change = 0
+Iteration 122 consecutive_low_change_count 600
+Iteration 122: Weight 113.85; Strategy Change = 0
+Iteration 123 consecutive_low_change_count 605
+Iteration 123: Weight 114.834; Strategy Change = 0
+Iteration 124 consecutive_low_change_count 610
+Iteration 124: Weight 115.818; Strategy Change = 0
+Iteration 125 consecutive_low_change_count 615
+Iteration 125: Weight 116.802; Strategy Change = 0
+Iteration 126 consecutive_low_change_count 620
+Iteration 126: Weight 117.786; Strategy Change = 0
+Iteration 127 consecutive_low_change_count 625
+Iteration 127: Weight 118.771; Strategy Change = 0
+Iteration 128 consecutive_low_change_count 630
+Iteration 128: Weight 119.755; Strategy Change = 0
+Iteration 129 consecutive_low_change_count 635
+Iteration 129: Weight 120.74; Strategy Change = 0
+Iteration 130 consecutive_low_change_count 640
+Iteration 130: Weight 121.725; Strategy Change = 0
+Iteration 131 consecutive_low_change_count 645
+Iteration 131: Weight 122.71; Strategy Change = 0
+Iteration 132 consecutive_low_change_count 650
+Iteration 132: Weight 123.695; Strategy Change = 0
+Iteration 133 consecutive_low_change_count 655
+Iteration 133: Weight 124.68; Strategy Change = 0
+Iteration 134 consecutive_low_change_count 660
+Iteration 134: Weight 125.665; Strategy Change = 0
+Iteration 135 consecutive_low_change_count 665
+Iteration 135: Weight 126.651; Strategy Change = 0
+Iteration 136 consecutive_low_change_count 670
+Iteration 136: Weight 127.636; Strategy Change = 0
+Iteration 137 consecutive_low_change_count 675
+Iteration 137: Weight 128.622; Strategy Change = 0
+Iteration 138 consecutive_low_change_count 680
+Iteration 138: Weight 129.607; Strategy Change = 0
+Iteration 139 consecutive_low_change_count 685
+Iteration 139: Weight 130.593; Strategy Change = 0
+Iteration 140 consecutive_low_change_count 690
+Iteration 140: Weight 131.579; Strategy Change = 0
+Iteration 141 consecutive_low_change_count 695
+Iteration 141: Weight 132.565; Strategy Change = 0
+Iteration 142 consecutive_low_change_count 700
+Iteration 142: Weight 133.551; Strategy Change = 0
+Iteration 143 consecutive_low_change_count 705
+Iteration 143: Weight 134.537; Strategy Change = 0
+Iteration 144 consecutive_low_change_count 710
+Iteration 144: Weight 135.523; Strategy Change = 0
+Iteration 145 consecutive_low_change_count 715
+Iteration 145: Weight 136.51; Strategy Change = 0
+Iteration 146 consecutive_low_change_count 720
+Iteration 146: Weight 137.496; Strategy Change = 0
+Iteration 147 consecutive_low_change_count 725
+Iteration 147: Weight 138.483; Strategy Change = 0
+Iteration 148 consecutive_low_change_count 730
+Iteration 148: Weight 139.469; Strategy Change = 0
+Iteration 149 consecutive_low_change_count 735
+Iteration 149: Weight 140.456; Strategy Change = 0
+Iteration 150 consecutive_low_change_count 740
+Iteration 150: Weight 141.443; Strategy Change = 0
+Iteration 151 consecutive_low_change_count 745
+Iteration 151: Weight 142.43; Strategy Change = 0
+Iteration 152 consecutive_low_change_count 750
+Iteration 152: Weight 143.417; Strategy Change = 0
+Iteration 153 consecutive_low_change_count 755
+Iteration 153: Weight 144.404; Strategy Change = 0
+Iteration 154 consecutive_low_change_count 760
+Iteration 154: Weight 145.391; Strategy Change = 0
+Iteration 155 consecutive_low_change_count 765
+Iteration 155: Weight 146.378; Strategy Change = 0
+Iteration 156 consecutive_low_change_count 770
+Iteration 156: Weight 147.365; Strategy Change = 0
+Iteration 157 consecutive_low_change_count 775
+Iteration 157: Weight 148.353; Strategy Change = 0
+Iteration 158 consecutive_low_change_count 780
+Iteration 158: Weight 149.34; Strategy Change = 0
+Iteration 159 consecutive_low_change_count 785
+Iteration 159: Weight 150.328; Strategy Change = 0
+Iteration 160 consecutive_low_change_count 790
+Iteration 160: Weight 151.315; Strategy Change = 0
+Iteration 161 consecutive_low_change_count 795
+Iteration 161: Weight 152.303; Strategy Change = 0
+Iteration 162 consecutive_low_change_count 800
+Iteration 162: Weight 153.291; Strategy Change = 0
+Iteration 163 consecutive_low_change_count 805
+Iteration 163: Weight 154.279; Strategy Change = 0
+Iteration 164 consecutive_low_change_count 810
+Iteration 164: Weight 155.267; Strategy Change = 0
+Iteration 165 consecutive_low_change_count 815
+Iteration 165: Weight 156.255; Strategy Change = 0
+Iteration 166 consecutive_low_change_count 820
+Iteration 166: Weight 157.243; Strategy Change = 0
+Iteration 167 consecutive_low_change_count 825
+Iteration 167: Weight 158.231; Strategy Change = 0
+Iteration 168 consecutive_low_change_count 830
+Iteration 168: Weight 159.219; Strategy Change = 0
+Iteration 169 consecutive_low_change_count 835
+Iteration 169: Weight 160.207; Strategy Change = 0
+Iteration 170 consecutive_low_change_count 840
+Iteration 170: Weight 161.196; Strategy Change = 0
+Iteration 171 consecutive_low_change_count 845
+Iteration 171: Weight 162.184; Strategy Change = 0
+Iteration 172 consecutive_low_change_count 850
+Iteration 172: Weight 163.172; Strategy Change = 0
+Iteration 173 consecutive_low_change_count 855
+Iteration 173: Weight 164.161; Strategy Change = 0
+Iteration 174 consecutive_low_change_count 860
+Iteration 174: Weight 165.15; Strategy Change = 0
+Iteration 175 consecutive_low_change_count 865
+Iteration 175: Weight 166.138; Strategy Change = 0
+Iteration 176 consecutive_low_change_count 870
+Iteration 176: Weight 167.127; Strategy Change = 0
+Iteration 177 consecutive_low_change_count 875
+Iteration 177: Weight 168.116; Strategy Change = 0
+Iteration 178 consecutive_low_change_count 880
+Iteration 178: Weight 169.105; Strategy Change = 0
+Iteration 179 consecutive_low_change_count 885
+Iteration 179: Weight 170.093; Strategy Change = 0
+Iteration 180 consecutive_low_change_count 890
+Iteration 180: Weight 171.082; Strategy Change = 0
+Iteration 181 consecutive_low_change_count 895
+Iteration 181: Weight 172.072; Strategy Change = 0
+Iteration 182 consecutive_low_change_count 900
+Iteration 182: Weight 173.061; Strategy Change = 0
+Iteration 183 consecutive_low_change_count 905
+Iteration 183: Weight 174.05; Strategy Change = 0
+Iteration 184 consecutive_low_change_count 910
+Iteration 184: Weight 175.039; Strategy Change = 0
+Iteration 185 consecutive_low_change_count 915
+Iteration 185: Weight 176.028; Strategy Change = 0
+Iteration 186 consecutive_low_change_count 920
+Iteration 186: Weight 177.018; Strategy Change = 0
+Iteration 187 consecutive_low_change_count 925
+Iteration 187: Weight 178.007; Strategy Change = 0
+Iteration 188 consecutive_low_change_count 930
+Iteration 188: Weight 178.996; Strategy Change = 0
+Iteration 189 consecutive_low_change_count 935
+Iteration 189: Weight 179.986; Strategy Change = 0
+Iteration 190 consecutive_low_change_count 940
+Iteration 190: Weight 180.976; Strategy Change = 0
+Iteration 191 consecutive_low_change_count 945
+Iteration 191: Weight 181.965; Strategy Change = 0
+Iteration 192 consecutive_low_change_count 950
+Iteration 192: Weight 182.955; Strategy Change = 0
+Iteration 193 consecutive_low_change_count 955
+Iteration 193: Weight 183.944; Strategy Change = 0
+Iteration 194 consecutive_low_change_count 960
+Iteration 194: Weight 184.934; Strategy Change = 0
+Iteration 195 consecutive_low_change_count 965
+Iteration 195: Weight 185.924; Strategy Change = 0
+Iteration 196 consecutive_low_change_count 970
+Iteration 196: Weight 186.914; Strategy Change = 0
+Iteration 197 consecutive_low_change_count 975
+Iteration 197: Weight 187.904; Strategy Change = 0
+Iteration 198 consecutive_low_change_count 980
+Iteration 198: Weight 188.894; Strategy Change = 0
+Iteration 199 consecutive_low_change_count 985
+Iteration 199: Weight 189.884; Strategy Change = 0
+Iteration 200 consecutive_low_change_count 990
+Iteration 200: Weight 190.874; Strategy Change = 0
+Iteration 201 consecutive_low_change_count 995
+Iteration 201: Weight 191.864; Strategy Change = 0
+Iteration 202 consecutive_low_change_count 1000
+Iteration 202: Weight 192.854; Strategy Change = 0
+Iteration 203 consecutive_low_change_count 1005
+Convergence achieved at iteration 203
+   -0.868708            0            0            0    0.0169159            0 -0.000593908            0            0            0            0            0            0            0            0
