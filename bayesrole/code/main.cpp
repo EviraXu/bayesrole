@@ -6,7 +6,8 @@
 #include "json.h"
 #include "optionparser.h"
 #include "lookahead.h"
-#include "cfr_plus.h"
+//#include "cfr_plus.h"
+#include "cfr_bayes.h"
 #include "util.h"
 #include "nn.h"
 #include "serialization.h"
@@ -219,6 +220,7 @@ void play_mode(
     cfr_get_values(lookahead.get(), iterations, wait_iterations, starting_probs, true, _dummy_values);
     calculate_cumulative_strategy(lookahead.get());
     json_serialize_lookahead(lookahead.get(), starting_probs, std::cout);
+    //json_serialize_lookahead_file(lookahead.get(), starting_probs, "result.json");
 }
 
 void nn_test_mode(

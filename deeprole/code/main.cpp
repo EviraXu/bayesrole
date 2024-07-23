@@ -213,7 +213,7 @@ void play_mode(
     );
 
     AssignmentProbs starting_probs;
-    json_deserialize_starting_reach_probs(std::cin, &starting_probs);
+    json_deserialize_starting_reach_probs_v2(std::cin, &starting_probs);
 
     ViewpointVector _dummy_values[NUM_PLAYERS];
     cfr_get_values(lookahead.get(), iterations, wait_iterations, starting_probs, true, _dummy_values);

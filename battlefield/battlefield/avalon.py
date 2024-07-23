@@ -42,7 +42,7 @@ class AvalonState(GameState):
         """
         Returns the starting state for a certain number of players
         """
-        print("----------new starting state----------")
+        #print("----------new starting state----------")
         return cls(proposer=0, propose_count=0, succeeds=0, fails=0, status='propose', proposal=None, game_end=None, num_players=num_players)
 
 

@@ -23,8 +23,46 @@ void json_deserialize_starting_reach_probs(std::istream& in_stream, AssignmentPr
 
     double reach_sum = starting_reach_probs->sum();
 
+
     if (abs(reach_sum - 1.0) >= 1e-9) {
         throw std::domain_error("Reach sum doesn't sum to 1.0");
+    }
+
+    *starting_reach_probs /= reach_sum;
+}
+
+void normalize_vector(vector<double>& vec) {
+    double total_sum = 0.0;
+    for (double value : vec) {
+        total_sum += value;
+    }
+    for (double& value : vec) {
+        value /= total_sum;
+    }
+}
+
+void json_deserialize_starting_reach_probs_v2(std::istream& in_stream, AssignmentProbs* starting_reach_probs) {
+    cerr << "Deserializing. Enter a json array of numbers:" << endl;
+    json j;
+    in_stream >> j;
+    std::vector<double> parsed_double_arr = j;
+
+    if (parsed_double_arr.size() != NUM_ASSIGNMENTS) {
+        throw std::length_error("Double array isn't the correct size");
+    }
+
+    for (int i = 0; i < parsed_double_arr.size(); i++) {
+        (*starting_reach_probs)(i) = parsed_double_arr[i];
+    }
+
+    double reach_sum = starting_reach_probs->sum();
+
+     //如果和不为1，归一化starting_reach_probs
+
+    //printf("reach_sum:",reach_sum);
+    if (abs(reach_sum - 1.0) >= 1e-9) {
+        *starting_reach_probs /= reach_sum;
+        //throw std::domain_error("Reach sum doesn't sum to 1.0");
     }
 
     *starting_reach_probs /= reach_sum;

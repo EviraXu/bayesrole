@@ -37,7 +37,7 @@ all: $(TARGET)
 %.o: %.cpp .cflags
 	$(CC) $(CFLAGS) -c $<
 
-$(TARGET): main.o lookahead.o lookup_tables.o cfr_plus.o util.o nn.o serialization.o fdeep_replace.o
+$(TARGET): main.o lookahead.o lookup_tables.o cfr_bayes.o util.o nn.o serialization.o fdeep_replace.o
 	$(CC) -o $(TARGET) $^ $(LDFLAGS)
 
 clean::

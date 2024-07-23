@@ -528,15 +528,20 @@ void cfr_get_values(
 
         //bool equals_previous_iteration = !save_strategy; // Save strategy disables checking for early finish
         bool equals_previous_iteration = true;
+        int play_equal = 0;
         for (int i = 0; i < NUM_PLAYERS; i++) {
-            if (!last_values[i].isApprox(root->counterfactual_values[i])) {
+            if (!last_values[i].isApprox(root->counterfactual_values[i],1e-3)) {
                 equals_previous_iteration = false;
+                consecutive_low_change_count = 0;
             }else{
-                consecutive_low_change_count++;
+                play_equal++;
             }
         }
+        if(play_equal == 5){
+            consecutive_low_change_count++;
+        }
         //std::cout << "Iteration " << iter <<" consecutive_low_change_count "<< consecutive_low_change_count << std::endl;
-        if (equals_previous_iteration && consecutive_low_change_count > 500) {
+        if (equals_previous_iteration && consecutive_low_change_count > 100) {
             for (int i = 0; i < NUM_PLAYERS; i++) {
                 values[i] = root->counterfactual_values[i];
             }

@@ -32,10 +32,10 @@ struct LookaheadNode {
     uint32_t proposal;//提议的执行任务玩家（00110）
     int merlin_pick;//梅林是谁
 
-    //reach_probs是一个二维数组，每行代表一个玩家（5个玩家），每列代表一个视角（15个视角）
-    //存储每个玩家在不同视角下的到达概率
+    //reach_probs是一个二维数组，每行代表一个玩家（5个玩家），每列代表一个信息集（15个信息集）
+    //存储每个玩家在不同信息集下的到达概率
     ViewpointVector reach_probs[NUM_PLAYERS];
-    ViewpointVector counterfactual_values[NUM_PLAYERS];//来自不同玩家视角的遗憾值
+    ViewpointVector counterfactual_values[NUM_PLAYERS];//来自不同玩家信息集的遗憾值
     
     //储存每个角色分配到达节点的概率
     std::unique_ptr<AssignmentProbs> full_reach_probs;//

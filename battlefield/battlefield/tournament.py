@@ -4,16 +4,20 @@ import multiprocessing
 import gzip
 import random
 import os
+import json
 from collections import defaultdict
+from keras.preprocessing.sequence import pad_sequences
 
-from battlefield.avalon_types import GOOD_ROLES, EVIL_ROLES, possible_hidden_states, starting_hidden_states
+from battlefield.avalon_types import GOOD_ROLES, EVIL_ROLES, possible_hidden_states, starting_hidden_states, ASSIGNMENT_TO_ROLES
 from battlefield.avalon import AvalonState
 import pickle
 
+
 def run_game(state, hidden_state, bots):
-    print("game")
     while not state.is_terminal():
+        #获取当前需要行动的玩家列表
         moving_players = state.moving_players()
+        #获取当前状态和该玩家在当前状态下的合法行动列表。
         moves = [
             bots[player].get_action(state, state.legal_actions(player, hidden_state))
             for player in moving_players
@@ -25,6 +29,7 @@ def run_game(state, hidden_state, bots):
             else:
                 move = None
             bot.handle_transition(state, new_state, observation, move=move)
+            #print("-----------transition finish----------------")
         state = new_state
 
     return state.terminal_value(hidden_state), state.game_end
@@ -59,7 +64,7 @@ def run_large_tournament(bots_classes, roles, games_per_matching=50):
                     bot_cls.create_and_reset(start_state, player, role, beliefs[player])
                     for player, (bot_cls, role) in enumerate(zip(bot_order, hidden_state))
                 ]
-                values, game_end = run_game(start_state, hidden_state, bots)
+                values, game_end =  (start_state, hidden_state, bots)
                 game_stat = {
                     'winner': game_end[0],
                     'win_type': game_end[1],
@@ -242,7 +247,7 @@ def run_all_combos(bots, roles, games_per_matching=50, parallelization=16):
         dataframe = run_large_tournament_parallel(pool, combination, roles, games_per_matching=games_per_matching)
         #filename = 'tournaments/{}_{}.msg.gz'.format(combo_name, job_id)
         #filename = 'tournaments/{}_{}.csv'.format(combo_name, job_id)
-        filename = f'{base_directory}/{combo_name}_{job_id}.csv'  # 修改文件路径以包含bots名称的文件夹
+        filename = f'{base_directory}/{combo_name}.csv'  # 修改文件路径以包含bots名称的文件夹
         print("Writing {}".format(filename))
         directory = os.path.dirname(filename)
         if not os.path.exists(directory):
@@ -345,11 +350,11 @@ def run_single_threaded_tournament(config, num_games=10, granularity=1):
         'end_types': {}
     }
 
-    #从config中提取所有机器人的角色，创建一个隐藏状态的元组
+    #从config中提取所有机器人的角色，表示一种角色分配
     hidden_state = tuple([bot['role'] for bot in config])
-    #计算所有可能的隐藏状态
+    #计算所有可能的角色分配（60种）
     all_hidden_states = possible_hidden_states(set(hidden_state), num_players=len(config))
-    #为每个玩家计算起始信念
+    #为每个玩家计算在这种角色分配下，认为可能的队伍角色分配
     beliefs = [
         starting_hidden_states(player, hidden_state, all_hidden_states) for player in range(len(config))
     ]
@@ -456,3 +461,152 @@ def run_and_print_game(config):
         state = new_state
 
     print(state.game_end)
+
+#收集信息
+def run_and_collect_information(config,file):
+    #初始化
+    bot_counts = {}
+    bot_names = []
+    role_positions = [None, None, None]
+    history = []
+    history_file = file
+    role_assignment = {
+        'role_assignment': None
+    }
+
+    for index,bot in enumerate(config):
+        base_name = bot['bot'].__name__
+        bot_counts[base_name] = bot_counts.get(base_name, 0) + 1
+        bot_names.append("{}_{}".format(base_name, bot_counts[base_name]))
+        if bot['role'] == 'merlin':
+            role_positions[0] = index
+        elif bot['role'] == 'assassin':
+            role_positions[1] = index
+        elif bot['role'] == 'minion':
+            role_positions[2] = index
+    
+    #当前角色分配
+    hidden_state = tuple([bot['role'] for bot in config])
+
+    for i, assignment in enumerate(ASSIGNMENT_TO_ROLES):
+        if assignment == role_positions:
+            role_assignment['role_assignment'] = i
+            break
+    
+    #记录当前角色分配
+    history.append(role_assignment)
+
+
+    #所有可能的角色分配
+    all_hidden_states = possible_hidden_states(set(hidden_state), num_players=len(config))
+
+    #返回对于每个玩家的角色来说，可能的角色分配组合
+    beliefs = [
+        starting_hidden_states(player, hidden_state, all_hidden_states) for player in range(len(config))
+    ]
+
+    #当前阿瓦隆初始状态
+    state = AvalonState.start_state(len(hidden_state))
+
+    #为当前玩家分配的bot算法
+    bots = [ bot['bot']() for bot in config ]
+    #重置bot
+    for i, bot in enumerate(bots):
+        bot.reset(state, i, hidden_state[i], beliefs[i])
+    
+    current_round = 1
+    round_data=[]
+    while not state.is_terminal():
+        moving_players = state.moving_players()
+        moves = [
+            bots[player].get_action(state, state.legal_actions(player, hidden_state))
+            for player in moving_players
+        ]
+        all_votes_passed = False
+        #propose_entry = {'round': current_round}
+        if state.status == 'propose':
+            player = moving_players[0]
+            propose_entry = {
+                'round' : current_round,
+                'propose_count' : state.propose_count+1,
+                'proposer_one_hot' : [int(i == player) for i in range(len(config))],
+                'proposal_one_hot' : [int(i in moves[0].proposal) for i in range(len(config))]
+            }
+            
+        elif state.status == 'vote':
+            player_votes = [1 if move.up else 0 for move in moves]
+            propose_entry['votes'] = player_votes
+            all_votes_passed = sum(player_votes) > len(player_votes) / 2
+            propose_entry['votes_passed'] = [1 if all_votes_passed is True else 0]
+            task_status=[]
+            if all_votes_passed == False:
+                task_status = [-1]
+                propose_entry['mission_status'] = task_status
+                round_data.append(propose_entry)
+            
+        elif state.status == 'run':
+            task_status = [0 if any(move.fail for move in moves) else 1]
+            propose_entry['mission_status'] = task_status
+            round_data.append(propose_entry)
+
+        new_state, _, observation = state.transition(moves, hidden_state)
+        for player, bot in enumerate(bots):
+            if player in moving_players:
+                move = moves[moving_players.index(player)]
+            else:
+                move = None
+            bot.handle_transition(state, new_state, observation, move=move)
+
+        if state.status == 'run' and new_state.status == 'propose':
+            current_round += 1
+        state = new_state
+
+    round_datas = {
+        'round_data': round_data
+    }
+    history.append(round_datas)
+        
+    with open(history_file, 'w') as f:
+        json.dump(history, f, indent=2)
+
+
+
+def prepare_data_for_lstm(history_file, data_file, max_rounds=5, max_proposals_per_round=5):
+    with open(history_file, 'r') as f:
+        data = json.load(f)
+
+    all_games_features = []
+    role_assignment = data[0]['role_assignment']
+    round_data = data[1]['round_data']
+    
+    game_features = []
+    for round_index in range(1, max_rounds + 1):
+        round_proposals = [x for x in round_data if x['round'] == round_index]
+        #print(len(round_proposals))
+        for proposal_index in range(1, max_proposals_per_round + 1):
+            if proposal_index <= len(round_proposals):
+                proposal = round_proposals[proposal_index - 1]
+                features = [
+                    proposal.get('round', -1),
+                    proposal.get('propose_count', -1),
+                    *proposal.get('proposer_one_hot', [-1]*5),
+                    *proposal.get('proposal_one_hot', [-1]*5),
+                    *proposal.get('votes', [-1]*5),
+                    proposal.get('votes_passed', [-1])[0],
+                    proposal.get('mission_status', [-1])[0]
+                ]
+            else:
+                # 填充空数据
+                features = [-1] * (19)
+                
+            game_features.extend(features)
+
+    # 添加角色分配信息
+    game_features.append(role_assignment)
+    all_games_features.append(game_features)
+    
+    # 创建DataFrame并保存到CSV
+    df = pd.DataFrame(all_games_features)
+    df.to_csv(data_file, mode='a', header=False,index=False)
+
+

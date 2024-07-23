@@ -9,6 +9,7 @@
 //反序列化函数
 //从输入流中读取JSON格式的数据，并将其反序列化为starting_reach_probs对象。这个对象可能代表了游戏开始时的各种状态概率。
 void json_deserialize_starting_reach_probs(std::istream& in_stream, AssignmentProbs* starting_reach_probs);
+void json_deserialize_starting_reach_probs_v2(std::istream& in_stream, AssignmentProbs* starting_reach_probs);
 
 //序列化函数
 //将LookaheadNode的根节点和与之关联的起始概率starting_reach_probs序列化为JSON格式，并将其写入输出流。

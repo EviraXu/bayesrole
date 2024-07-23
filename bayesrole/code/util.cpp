@@ -4,7 +4,7 @@
 #include <map>
 
 #include "util.h"
-#include "cfr_plus.h"
+#include "cfr_bayes.h"
 
 std::mt19937 rng;
 

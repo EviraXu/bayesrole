@@ -2,3 +2,5 @@
 *.pyc
 .DS_Store
 *.dSYM
+/root/DeepRole-master/battlefield/collect_information/all_combined.npy
+
